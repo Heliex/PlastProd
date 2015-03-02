@@ -1,0 +1,25 @@
+{# Cette vue étends du layout principale, c'est elle qui permet d'afficher tout ce qui est dans le cadre gris entre le header et le menu a gaauche #}
+
+{% extends '::layout.html.twig' %}
+
+{% block title %}
+<title>Accueil  - {{ parent()}}</title>
+{% endblock %}
+
+{% block body %}
+<div class = "container_principale">
+	<div class = "chemin">
+		<p>{{ app.request.pathInfo}}</p>
+	</div>
+	
+	<div class = "module">
+	<p> Nom du module : {{ module }}<p>
+	</div>
+	
+	<div class = "action">
+	{% block actions %}
+	<p>La société PlastProd est une société qui crée des Pièces à partir de Matières Premières depuis 1806, Cette entreprise est un gage de qualité et représente notre formation au sein de CESI NANCY.</p>
+	{% endblock %}
+	</div>
+</div>
+{% endblock %}

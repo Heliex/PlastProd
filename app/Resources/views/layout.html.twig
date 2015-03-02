@@ -1,0 +1,68 @@
+{# Vue principale du bundle #}
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset = "UTF-8" />
+		{% block title %}
+			 PlastProd
+		{% endblock %}
+		
+		{% block css %}
+		<link rel = "stylesheet" href="{{ asset('bundles/PlastProd/css/layout.css')}}"/>
+		<link rel = "stylesheet" href="{{ asset('bundles/PlastProd/css/bootstrap.min.css')}}"/>
+		{% endblock %}
+		
+		{%block js %}
+		<script src = "{{ asset('bundles/PlastProd/js/jquery.min.js') }}"></script>
+		<script src = "{{ asset('bundles/PlastProd/js/bootstrap.min.js') }}"></script>
+		{% endblock %}
+	</head>
+	<body>
+		<header class = "header">
+			<div class = "logo"><a href = "{{ path('roger_plast_prod_homepage')}}">
+			<img src = "{{ asset('bundles/PlastProd/images/logo.png')}}"/>
+			</div></a>
+			<div class = "notifs">
+				<div  class="carousel slide" data-ride="carousel">
+				  <!-- Wrapper for slides -->
+					<div class="carousel-inner" >
+						<div class="item active">
+							<p>Notif n°1</p>
+						</div>
+						<div class="item">
+							<p>Notif n°2</p>
+						</div>
+						<div class="item">
+							<p>Notif n°3</p>
+						</div>
+						<div class="item">
+							<p>Notif n°4</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- Cette ligne permet d'allez chercher un controller pour qu'il me fournisse un template. ( le template d'infos d'utilisateur C-A-D si l'utilateur est connecté affiché son pseudo sinon affiché invité) !-->
+			{{render(controller ("ROGERPlastProdBundle:PlastProd:connexion")) }}
+		</header>
+	<div class = "left-container">
+		<div class = "left-button"><a class = "liens" href = "{{ path('roger_plast_prod_clients') }} ">
+			<p>Utilisateur/Client </p>
+		</a></div>
+		<div class = "left-button"><a class = "liens" href = "{{ path('roger_plast_prod_production') }} ">
+			<p>Production</p>
+		</a></div>
+		<div class = "left-button">
+			<p>Fournisseurs</p>
+		</div >
+		<div class = "left-button">
+			<p>Stocks</p>
+		</div>
+	</div>
+	{% block body %}
+	{% endblock %}
+	<footer>
+	</footer>
+	</body>
+</html>
+

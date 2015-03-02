@@ -1,0 +1,35 @@
+roger_plast_prod_homepage:
+    path:     /
+    defaults: { _controller: ROGERPlastProdBundle:PlastProd:index }
+
+roger_plast_prod_clients:
+    path:    /Client
+    defaults: { _controller: ROGERPlastProdBundle:Client:client}
+
+roger_plast_prod_client_suivi:
+    path:    /Client/Suivi
+    defaults: { _controller:ROGERPlastProdBundle:Client:suivi}
+
+roger_plast_prod_client_infos:
+    path: /Client/Infos
+    defaults: { _controller:ROGERPlastProdBundle:Client:infos}
+
+roger_plast_prod_client_communique:
+    path: /Client/Contact
+    defaults: { _controller:ROGERPlastProdBundle:Client:communique}
+
+roger_plast_prod_production:
+    path: /Production
+    defaults: { _controller: ROGERPlastProdBundle:Production:production}
+
+roger_plast_prod_production_lancement:
+    path:    /Production/LancerProd
+    defaults: { _controller: ROGERPlastProdBundle:Production:lancement}
+
+roger_plast_prod_production_etiquette:
+    path:   /Production/Etiquettes
+    defaults: { _controller: ROGERPlastProdBundle:Production:etiquette}
+
+roger_plast_prod_production_jeter:
+    path:    /Production/ProduitsDefaillants
+    defaults: { _controller: ROGERPlastProdBundle:Production:jeter}

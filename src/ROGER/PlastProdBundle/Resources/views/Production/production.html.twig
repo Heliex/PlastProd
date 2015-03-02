@@ -1,0 +1,14 @@
+{# Vue qui correspond au module Prod #}
+
+{% extends 'ROGERPlastProdBundle:PlastProd:index.html.twig' %}
+{% block title %}
+<title>Production - PlastProd </title>
+{% endblock %}
+
+{% block actions %}
+<div>
+	<p><a class = "liens" href = "{{ path('roger_plast_prod_production_lancement') }}">Lancement de production ( BDC Obligatoire).</a></p>
+	<p><a class = "liens" href = "{{ path('roger_plast_prod_production_etiquette')}}">Visualisation des étiquettes.</a></p>
+	<p><a class = "liens" href = "{{ path('roger_plast_prod_production_jeter')}}">Visualisation des produits déféctueux.</a></p>
+</div>
+{% endblock %}

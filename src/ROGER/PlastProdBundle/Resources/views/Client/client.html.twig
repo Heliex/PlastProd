@@ -1,0 +1,15 @@
+{# Vue qui correspond au module Client #}
+
+{% extends 'ROGERPlastProdBundle:PlastProd:index.html.twig' %}
+
+{% block title %}
+<title>Client - PlastProd </title>
+{% endblock %}
+
+{% block actions %}
+<div>
+	<p><a class = "liens" href = "{{ path('roger_plast_prod_client_infos') }}">Visualiser les infos de l'entreprise.</a></p>
+	<p><a class = "liens" href = "{{ path('roger_plast_prod_client_communique')}}">Communiquer avec l'entreprise.</a></p>
+	<p><a class = "liens" href = "{{ path('roger_plast_prod_client_suivi')}}">Suivre votre commande.</a></p>
+</div>
+{% endblock %}

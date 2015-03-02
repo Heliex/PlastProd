@@ -1,0 +1,48 @@
+
+security:
+    encoders:
+        ROGER\UserBundle\Entity\Utilisateurs: sha512
+
+    role_hierarchy:
+        ROLE_ADMIN:       [ROLE_USER,ROLE_PROD,ROLE_FOURNISSEURS,ROLE_STOCKS]
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+
+    providers:
+        in_memory:
+            memory:
+                users:
+                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+
+        main:
+            id:   fos_user.user_provider.username
+
+    firewalls:
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            pattern: ^/
+            anonymous: ~
+            provider: main
+            access_denied_url:    /PlastProd/Client/Suivi
+            form_login:
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+                default_target_path: /PlastProd
+
+            remember_me:
+                key:    %secret%
+
+            logout:
+                path: fos_user_security_logout
+                target: /PlastProd
+    
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/PlastProd/Client/Suivi, roles: IS_AUTHENTICATED_REMEMBERED}
+        - { path: ^/PlastProd/Production*, roles : IS_AUTHENTICATED_REMEMBERED}
+        - { path: ^/PlastProd/Fournisseurs/*, roles : ROLE_FOURNISSEURS}
+        - { path: ^/PlastProd/Stocks*, roles: ROLE_STOCKS}
