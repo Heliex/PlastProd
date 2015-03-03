@@ -124,6 +124,125 @@
 		text-align : center;
 	}
 	
+	.btn-clients, .btn-production, .btn-fournisseurs, .btn-stocks
+	{
+		margin-top : 20%;
+		font-size : 1.2em;
+		font-family : Arial;
+		width : 120px;
+		height : 120px;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		border : none;
+		color : #fff;
+		margin-left : 7.5px;
+		margin-right : 7.5px;
+		-moz-box-shadow: 1px 1px 4px 1px #c0c0c0;
+		-webkit-box-shadow: 1px 1px 4px 1px #c0c0c0;
+		box-shadow: inset 0 0 0 4px #c0c0c0;
+	}
+	
+	
+	
+	
+	.btn-clients
+	{
+		margin-left: 15%;
+		background-color : #9D9C99;
+		background-image: url("../images/labelclients.ico");
+		background-size: 110%;
+		background-repeat: no-repeat;
+		background-position: 25px -10px;
+	}
+	
+	.btn-clients:hover
+	{
+		height : 120px;
+		-webkit-border-radius: 40%;
+		-moz-border-radius: 40%;
+		border-radius: 40%;
+		background-color : #8d8c89;
+		background-image: url("../images/labelclients.ico");
+		background-size: 110%;
+		background-repeat: no-repeat;
+		background-position: 25px -10px;
+	}
+	
+	.btn-production
+	{
+		margin-left: 15%;
+		background-color : #9D9C99;
+		background-image: url("../images/labelproduction.ico");
+		background-size: 110%;
+		background-repeat: no-repeat;
+		background-position: 10px -5px;
+	}
+	
+	.btn-production:hover
+	{
+		height : 120px;
+		-webkit-border-radius: 40%;
+		-moz-border-radius: 40%;
+		border-radius: 40%;
+		background-color : #8d8c89;
+		background-image: url("../images/labelproduction.ico");
+		background-size: 110%;
+		background-repeat: no-repeat;
+		background-position: 10px -5px;
+	}
+	
+	.btn-fournisseurs
+	{
+		margin-left: 15%;
+		background-color : #9D9C99;
+		background-image: url("../images/labelfournisseurs.ico");
+		background-size: 110%;
+		background-repeat: no-repeat;
+		background-position: 3px 15px;
+	}
+	
+	.btn-fournisseurs:hover
+	{
+		height : 120px;
+		-webkit-border-radius: 40%;
+		-moz-border-radius: 40%;
+		border-radius: 40%;
+		background-color : #8d8c89;
+		background-image: url("../images/labelfournisseurs.ico");
+		background-size: 110%;
+		background-repeat: no-repeat;
+		background-position: 3px 15px;
+	}
+	
+	.btn-stocks
+	{
+		margin-left: 15%;
+		background-color : #9D9C99;
+		background-image: url("../images/labelstocks.ico");
+		background-size: 110%;
+		background-repeat: no-repeat;
+		background-position: 25px -15px;
+	}
+	
+	.btn-stocks:hover
+	{
+		height : 120px;
+		-webkit-border-radius: 40%;
+		-moz-border-radius: 40%;
+		border-radius: 40%;
+		background-color : #8d8c89;
+		background-image: url("../images/labelstocks.ico");
+		background-size: 110%;
+		background-repeat: no-repeat;
+		background-position: 25px -15px;
+	}
+	
+	.img-l
+	{
+		margin-top: 20%	
+	}
+	
 	.container_principale
 	{
 		padding-left : 175px;
@@ -170,5 +289,3 @@
 		
 	}
 }
-
-/* fin du style pour un ecran de base */

@@ -33,3 +33,11 @@ roger_plast_prod_production_etiquette:
 roger_plast_prod_production_jeter:
     path:    /Production/ProduitsDefaillants
     defaults: { _controller: ROGERPlastProdBundle:Production:jeter}
+
+roger_plast_prod_fournisseurs:
+    path:    /Fournisseurs
+    defaults: { _controller: ROGERPlastProdBundle:Fournisseurs:fournisseurs}
+
+roger_plast_prod_stocks:
+    path:    /Stocks
+    defaults: { _controller: ROGERPlastProdBundle:Stocks:indix}
