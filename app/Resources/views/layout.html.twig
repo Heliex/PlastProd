@@ -46,18 +46,14 @@
 			{{render(controller ("ROGERPlastProdBundle:PlastProd:connexion")) }}
 		</header>
 	<div class = "left-container">
-		<div class = "left-button"><a class = "liens" href = "{{ path('roger_plast_prod_clients') }} ">
-			<p>Utilisateur/Client </p>
-		</a></div>
-		<div class = "left-button"><a class = "liens" href = "{{ path('roger_plast_prod_production') }} ">
-			<p>Production</p>
-		</a></div>
-		<div class = "left-button">
-			<p>Fournisseurs</p>
-		</div >
-		<div class = "left-button">
-			<p>Stocks</p>
-		</div>
+		<a class = "liens" href = "{{ path('roger_plast_prod_clients') }} "><div class = "btn-clients">
+		</div></a>
+		<a class = "liens" href = "{{ path('roger_plast_prod_production') }} "><div class = "btn-production">
+		</div></a>
+		<a class = "liens" href = "{{ path('roger_plast_prod_fournisseurs') }} "><div class = "btn-fournisseurs">
+		</div></a>
+		<a class = "liens" href = "{{ path('roger_plast_prod_fournisseurs') }} "><div class = "btn-stocks">
+		</div></a>
 	</div>
 	{% block body %}
 	{% endblock %}
