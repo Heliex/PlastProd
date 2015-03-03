@@ -2,7 +2,7 @@
 
 /**
 * 	Controleur qui gére toutes la partie accueil sans être authentifié.
-*	Le controleur agit de cette façon, pour telle action, affiche moi telle
+*	Le controleur agit de cette façon, pour telle action, affiche moi telle vue.
 */
 
 namespace ROGER\PlastProdBundle\Controller;
