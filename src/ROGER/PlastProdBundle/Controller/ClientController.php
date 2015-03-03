@@ -2,7 +2,7 @@
 
 /**
 *	Controleur qui gère toutes les vues pour le module Client.
-*    Le controleur agit de cette façon, pour telle action, affiche moi telle vue.
+*    Le controleur agit de cette façon, pour telle action, affiche moi telle vue
 */
 
 namespace ROGER\PlastProdBundle\Controller;
