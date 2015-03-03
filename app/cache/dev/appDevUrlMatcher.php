@@ -183,6 +183,16 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             }
 
+            // roger_plast_prod_fournisseurs
+            if ($pathinfo === '/PlastProd/Fournisseurs') {
+                return array (  '_controller' => 'ROGER\\PlastProdBundle\\Controller\\FournisseursController::fournisseursAction',  '_route' => 'roger_plast_prod_fournisseurs',);
+            }
+
+            // roger_plast_prod_stocks
+            if ($pathinfo === '/PlastProd/Stocks') {
+                return array (  '_controller' => 'ROGER\\PlastProdBundle\\Controller\\StocksController::indixAction',  '_route' => 'roger_plast_prod_stocks',);
+            }
+
         }
 
         if (0 === strpos($pathinfo, '/log')) {

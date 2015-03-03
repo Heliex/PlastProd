@@ -1,6 +1,6 @@
 /* Feuille de style de la vue principale ( vue qui sera sur toutes les pages du site)*/
 
-@media screen and (max-width : 1980px) and (min-width : 1000px) and (min-height : 600px) and (max-height : 1080px)
+@media screen and (max-width : 1980px) and (min-width : 1000px) and (min-height : 200px) and (max-height : 1080px)
 {
 	html, body
 	{
@@ -273,13 +273,12 @@
 		margin-right : 10%;
 		margin-left : 10%;
 		height: 600px;
-		border : Solid Black 1px;
 	}
 	
 	.liens, .liens:hover, .liens:visited, .liens:link
 	{
 		text-decoration:none;
-		color: White;
+		color: Black;
 		font-size : 1em;
 		font-family : Comic Sans MS;
 	}
@@ -288,4 +287,33 @@
 	{
 		
 	}
+
+	.cust_butt
+	{
+		width: 100%;
+		height: 33.3%;
+		opacity: 0.5;
+		font-family: Comic Sans MS;
+		font-size: 2em;
+		background-color: #E8E8E8;
+	}
+
+	.cust_butt a
+	{
+		color: black;
+	}
+
+	.cust_butt:hover
+	{
+		opacity: 0.25;
+		background-color: #D0C5C0;
+		color: black;
+
+	}
+
+	#button_container
+	{
+		height: 600px;
+	}
+
 }

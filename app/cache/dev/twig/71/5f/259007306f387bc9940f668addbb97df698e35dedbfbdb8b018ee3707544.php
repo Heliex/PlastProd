@@ -45,19 +45,19 @@ class __TwigTemplate_715f259007306f387bc9940f668addbb97df698e35dedbfbdb8b018ee37
     public function block_actions($context, array $blocks = array())
     {
         // line 10
-        echo "<div>
-\t<p><a class = \"liens\" href = \"";
+        echo "<div id=\"button_container\">
+\t<button class = \"cust_butt\"><p><a class = \"liens\" href = \"";
         // line 11
         echo $this->env->getExtension('routing')->getPath("roger_plast_prod_client_infos");
-        echo "\">Visualiser les infos de l'entreprise.</a></p>
-\t<p><a class = \"liens\" href = \"";
+        echo "\">Visualiser les infos de l'entreprise.</a></p></button></br>
+\t<button class = \"cust_butt\"><p><a class = \"liens\" href = \"";
         // line 12
         echo $this->env->getExtension('routing')->getPath("roger_plast_prod_client_communique");
-        echo "\">Communiquer avec l'entreprise.</a></p>
-\t<p><a class = \"liens\" href = \"";
+        echo "\">Communiquer avec l'entreprise.</a></p></button></br>
+\t<button class = \"cust_butt\"><p><a class = \"liens\" href = \"";
         // line 13
         echo $this->env->getExtension('routing')->getPath("roger_plast_prod_client_suivi");
-        echo "\">Suivre votre commande.</a></p>
+        echo "\">Suivre votre commande.</a></p></button>
 </div>
 ";
     }

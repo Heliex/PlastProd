@@ -77,29 +77,31 @@ class __TwigTemplate_990f4de86748c85e5c017d62ffc9c9217d8b69b82a12689f93023297bce
         echo "
 \t\t</header>
 \t<div class = \"left-container\">
-\t\t<div class = \"left-button\"><a class = \"liens\" href = \"";
+\t\t<a class = \"liens\" href = \"";
         // line 49
         echo $this->env->getExtension('routing')->getPath("roger_plast_prod_clients");
-        echo " \">
-\t\t\t<p>Utilisateur/Client </p>
-\t\t</a></div>
-\t\t<div class = \"left-button\"><a class = \"liens\" href = \"";
-        // line 52
+        echo " \"><div class = \"btn-clients\">
+\t\t</div></a>
+\t\t<a class = \"liens\" href = \"";
+        // line 51
         echo $this->env->getExtension('routing')->getPath("roger_plast_prod_production");
-        echo " \">
-\t\t\t<p>Production</p>
-\t\t</a></div>
-\t\t<div class = \"left-button\">
-\t\t\t<p>Fournisseurs</p>
-\t\t</div >
-\t\t<div class = \"left-button\">
-\t\t\t<p>Stocks</p>
-\t\t</div>
+        echo " \"><div class = \"btn-production\">
+\t\t</div></a>
+\t\t<a class = \"liens\" href = \"";
+        // line 53
+        echo $this->env->getExtension('routing')->getPath("roger_plast_prod_fournisseurs");
+        echo " \"><div class = \"btn-fournisseurs\">
+\t\t</div></a>
+\t\t<a class = \"liens\" href = \"";
+        // line 55
+        echo $this->env->getExtension('routing')->getPath("roger_plast_prod_fournisseurs");
+        echo " \"><div class = \"btn-stocks\">
+\t\t</div></a>
 \t</div>
 \t";
-        // line 62
+        // line 58
         $this->displayBlock('body', $context, $blocks);
-        // line 64
+        // line 60
         echo "\t<footer>
 \t</footer>
 \t</body>
@@ -144,10 +146,10 @@ class __TwigTemplate_990f4de86748c85e5c017d62ffc9c9217d8b69b82a12689f93023297bce
 \t\t";
     }
 
-    // line 62
+    // line 58
     public function block_body($context, array $blocks = array())
     {
-        // line 63
+        // line 59
         echo "\t";
     }
 
@@ -163,6 +165,6 @@ class __TwigTemplate_990f4de86748c85e5c017d62ffc9c9217d8b69b82a12689f93023297bce
 
     public function getDebugInfo()
     {
-        return array (  151 => 63,  148 => 62,  142 => 18,  137 => 17,  134 => 16,  128 => 13,  123 => 12,  120 => 11,  115 => 8,  112 => 7,  103 => 64,  101 => 62,  88 => 52,  82 => 49,  76 => 46,  51 => 24,  47 => 23,  42 => 20,  40 => 16,  37 => 15,  35 => 11,  32 => 10,  30 => 7,  23 => 2,);
+        return array (  153 => 59,  150 => 58,  144 => 18,  139 => 17,  136 => 16,  130 => 13,  125 => 12,  122 => 11,  117 => 8,  114 => 7,  105 => 60,  103 => 58,  97 => 55,  92 => 53,  87 => 51,  82 => 49,  76 => 46,  51 => 24,  47 => 23,  42 => 20,  40 => 16,  37 => 15,  35 => 11,  32 => 10,  30 => 7,  23 => 2,);
     }
 }
