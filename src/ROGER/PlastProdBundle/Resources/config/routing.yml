@@ -42,6 +42,33 @@ roger_plast_prod_stocks:
     path:    /Stocks
     defaults: { _controller: ROGERPlastProdBundle:Stocks:index}
 
+roger_plast_prod_stocks_nomenclature:
+    path:    /Stocks/GestionsNomenclatures
+    defaults: { _controller: ROGERPlastProdBundle:Stocks:nomenclature}
+
+
+roger_plast_prod_stocks_stockage:
+    path:    /Stocks/GestionNomenclature/Stockage
+    defaults: { _controller: ROGERPlastProdBundle:Stocks:stockage}
+
+roger_plast_prod_stocks_expedition:
+    path:   /Stocks/GestionNomenclature/Expeditions
+    defaults: { _controller: ROGERPlastProdBundle:Stocks:expedition}
+
+roger_plast_prod_stocks_gestionMP:
+    path:    /Stocks/GestionMP
+    defaults: { _controller: ROGERPlastProdBundle:Stocks:gestionMP}
+
+roger_plast_prod_stocks_MP:
+    path:    /Stocks/MatieresPremieres
+    defaults: { _controller: ROGERPlastProdBundle:Stocks:matieres}
+
+
+roger_plast_prod_stocks_MP_Inventaire:
+    path:    /Stocks/MatieresPremieres/Inventaire
+    defaults: { _controller: ROGERPlastProdBundle:Stocks:inventaire }
+
+
 roger_plast_prod_config:
     path:    /Config
     defaults: {_controller: ROGERPlastProdBundle:Config:index}
@@ -53,3 +80,7 @@ roger_plast_prod_config_acces:
 roger_plast_prod_config_droits:
     path:    /Config/Droits
     defaults: { _controller: ROGERPlastProdBundle:Config:droits}
+
+roger_plast_prod_config_ajout:
+    path:    /Config/Ajout
+    defaults: { _controller: ROGERPlastProdBundle:Config:add}

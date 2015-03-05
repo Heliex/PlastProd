@@ -1,0 +1,12 @@
+{# Vue qui correspond au module Stocks, partie gestion des nomenclatures #}
+
+{% extends 'ROGERPlastProdBundle:PlastProd:index.html.twig' %}
+
+{% block title %}
+<title>Stocks - Gestion des nomenclatures - PlastProd </title>
+{% endblock %}
+
+{% block actions %}
+<a class="liens" href = "{{ path('roger_plast_prod_stocks_stockage')}}"><button class ="cust_butt_stocks"><p>Reception et Stockage</p></button></a>
+<a class="liens" href = "{{ path('roger_plast_prod_stocks_expedition')}}"><button class ="cust_butt_stocks"><p>Expedition vers le Client</p></button></a>
+{% endblock %}
