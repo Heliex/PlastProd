@@ -33,21 +33,21 @@ class __TwigTemplate_990f4de86748c85e5c017d62ffc9c9217d8b69b82a12689f93023297bce
 \t\t";
         // line 11
         $this->displayBlock('css', $context, $blocks);
-        // line 15
+        // line 16
         echo "\t\t
 \t\t";
-        // line 16
+        // line 17
         $this->displayBlock('js', $context, $blocks);
-        // line 20
+        // line 21
         echo "\t</head>
 \t<body>
 \t\t<header class = \"header\">
 \t\t\t<div class = \"logo\"><a href = \"";
-        // line 23
+        // line 24
         echo $this->env->getExtension('routing')->getPath("roger_plast_prod_homepage");
         echo "\">
 \t\t\t<img src = \"";
-        // line 24
+        // line 25
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/PlastProd/images/logo.png"), "html", null, true);
         echo "\"/>
 \t\t\t</div></a>
@@ -72,36 +72,36 @@ class __TwigTemplate_990f4de86748c85e5c017d62ffc9c9217d8b69b82a12689f93023297bce
 \t\t\t</div>
 \t\t\t<!-- Cette ligne permet d'allez chercher un controller pour qu'il me fournisse un template. ( le template d'infos d'utilisateur C-A-D si l'utilateur est connecté affiché son pseudo sinon affiché invité) !-->
 \t\t\t";
-        // line 46
+        // line 47
         echo $this->env->getExtension('http_kernel')->renderFragment($this->env->getExtension('http_kernel')->controller("ROGERPlastProdBundle:PlastProd:connexion"));
         echo "
 \t\t</header>
 \t<div class = \"left-container\">
 \t\t<a class = \"liens\" href = \"";
-        // line 49
+        // line 50
         echo $this->env->getExtension('routing')->getPath("roger_plast_prod_clients");
         echo " \"><div class = \"btn-clients\">
 \t\t</div></a>
 \t\t<a class = \"liens\" href = \"";
-        // line 51
+        // line 52
         echo $this->env->getExtension('routing')->getPath("roger_plast_prod_production");
         echo " \"><div class = \"btn-production\">
 \t\t</div></a>
 \t\t<a class = \"liens\" href = \"";
-        // line 53
+        // line 54
         echo $this->env->getExtension('routing')->getPath("roger_plast_prod_fournisseurs");
         echo " \"><div class = \"btn-fournisseurs\">
 \t\t</div></a>
 \t\t<a class = \"liens\" href = \"";
-        // line 55
+        // line 56
         echo $this->env->getExtension('routing')->getPath("roger_plast_prod_fournisseurs");
         echo " \"><div class = \"btn-stocks\">
 \t\t</div></a>
 \t</div>
 \t";
-        // line 58
+        // line 59
         $this->displayBlock('body', $context, $blocks);
-        // line 60
+        // line 61
         echo "\t<footer>
 \t</footer>
 \t</body>
@@ -129,27 +129,31 @@ class __TwigTemplate_990f4de86748c85e5c017d62ffc9c9217d8b69b82a12689f93023297bce
         // line 13
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/PlastProd/css/bootstrap.min.css"), "html", null, true);
         echo "\"/>
+\t\t<link rel=\"stylesheet\" href=\"";
+        // line 14
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/PlastProd/css/form.css"), "html", null, true);
+        echo "\"/>
 \t\t";
     }
 
-    // line 16
+    // line 17
     public function block_js($context, array $blocks = array())
     {
-        // line 17
+        // line 18
         echo "\t\t<script src = \"";
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/PlastProd/js/jquery.min.js"), "html", null, true);
         echo "\"></script>
 \t\t<script src = \"";
-        // line 18
+        // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/PlastProd/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 \t\t";
     }
 
-    // line 58
+    // line 59
     public function block_body($context, array $blocks = array())
     {
-        // line 59
+        // line 60
         echo "\t";
     }
 
@@ -165,6 +169,6 @@ class __TwigTemplate_990f4de86748c85e5c017d62ffc9c9217d8b69b82a12689f93023297bce
 
     public function getDebugInfo()
     {
-        return array (  153 => 59,  150 => 58,  144 => 18,  139 => 17,  136 => 16,  130 => 13,  125 => 12,  122 => 11,  117 => 8,  114 => 7,  105 => 60,  103 => 58,  97 => 55,  92 => 53,  87 => 51,  82 => 49,  76 => 46,  51 => 24,  47 => 23,  42 => 20,  40 => 16,  37 => 15,  35 => 11,  32 => 10,  30 => 7,  23 => 2,);
+        return array (  157 => 60,  154 => 59,  148 => 19,  143 => 18,  140 => 17,  134 => 14,  130 => 13,  125 => 12,  122 => 11,  117 => 8,  114 => 7,  105 => 61,  103 => 59,  97 => 56,  92 => 54,  87 => 52,  82 => 50,  76 => 47,  51 => 25,  47 => 24,  42 => 21,  40 => 17,  37 => 16,  35 => 11,  32 => 10,  30 => 7,  23 => 2,);
     }
 }

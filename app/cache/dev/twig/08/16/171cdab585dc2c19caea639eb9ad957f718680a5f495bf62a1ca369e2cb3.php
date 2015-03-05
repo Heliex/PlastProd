@@ -19,6 +19,7 @@ class __TwigTemplate_0816171cdab585dc2c19caea639eb9ad957f718680a5f495bf62a1ca369
 
         $this->blocks = array(
             'fos_user_content' => array($this, 'block_fos_user_content'),
+            'body' => array($this, 'block_body'),
         );
     }
 
@@ -32,54 +33,64 @@ class __TwigTemplate_0816171cdab585dc2c19caea639eb9ad957f718680a5f495bf62a1ca369
         $this->parent->display($context, array_merge($this->blocks, $blocks));
     }
 
-    // line 5
+    // line 4
     public function block_fos_user_content($context, array $blocks = array())
     {
-        // line 6
+        // line 5
         if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
-            // line 7
+            // line 6
             echo "    <div>";
             echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans($this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "messageKey", array()), $this->getAttribute((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error")), "messageData", array()), "security"), "html", null, true);
             echo "</div>
 ";
         }
+        // line 8
+        $this->displayBlock('body', $context, $blocks);
+    }
+
+    public function block_body($context, array $blocks = array())
+    {
         // line 9
-        echo "
-<form action=\"";
-        // line 10
+        echo "<div id = \"content\">
+\t<p id = \"texte\">Vous devez vous logger pour acceder à cette page </p>
+\t<div id = \"form\">
+\t\t<form id=\"formulaire\" action=\"";
+        // line 12
         echo $this->env->getExtension('routing')->getPath("fos_user_security_check");
         echo "\" method=\"post\">
-    <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 11
+\t\t\t<input type=\"hidden\" name=\"_csrf_token\" value=\"";
+        // line 13
         echo twig_escape_filter($this->env, (isset($context["csrf_token"]) ? $context["csrf_token"] : $this->getContext($context, "csrf_token")), "html", null, true);
         echo "\" />
 
-    <label for=\"username\">";
-        // line 13
+\t\t\t<label for=\"username\">";
+        // line 15
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.username", array(), "FOSUserBundle"), "html", null, true);
         echo "</label>
-    <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 14
-        echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
-        echo "\" required=\"required\" />
-
-    <label for=\"password\">";
+\t\t\t<input type=\"text\" id=\"username\" name=\"_username\" value=\"";
         // line 16
+        echo twig_escape_filter($this->env, (isset($context["last_username"]) ? $context["last_username"] : $this->getContext($context, "last_username")), "html", null, true);
+        echo "\" required=\"required\" /><br />
+
+\t\t\t<label for=\"password\">";
+        // line 18
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.password", array(), "FOSUserBundle"), "html", null, true);
         echo "</label>
-    <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" />
+\t\t\t<input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" /> </br >
 
-    <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
-    <label for=\"remember_me\">";
-        // line 20
-        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.remember_me", array(), "FOSUserBundle"), "html", null, true);
-        echo "</label>
-
-    <input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
+\t\t\t<input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
+\t\t\t<label for=\"remember_me\">";
         // line 22
+        echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.remember_me", array(), "FOSUserBundle"), "html", null, true);
+        echo "</label> <br />
+
+\t\t\t<input type=\"submit\" id=\"_submit\" name=\"_submit\" value=\"";
+        // line 24
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.submit", array(), "FOSUserBundle"), "html", null, true);
-        echo "\" />
-</form>
+        echo "\" /><input type=\"reset\" id=\"reset\" name=\"_reset\" value=\"Annuler\"/>
+\t\t</form>
+\t</div>
+</div>
 ";
     }
 
@@ -95,6 +106,6 @@ class __TwigTemplate_0816171cdab585dc2c19caea639eb9ad957f718680a5f495bf62a1ca369
 
     public function getDebugInfo()
     {
-        return array (  80 => 22,  75 => 20,  68 => 16,  63 => 14,  59 => 13,  54 => 11,  50 => 10,  47 => 9,  41 => 7,  39 => 6,  36 => 5,  11 => 1,);
+        return array (  89 => 24,  84 => 22,  77 => 18,  72 => 16,  68 => 15,  63 => 13,  59 => 12,  54 => 9,  48 => 8,  42 => 6,  40 => 5,  37 => 4,  11 => 1,);
     }
 }
