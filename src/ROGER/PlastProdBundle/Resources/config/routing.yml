@@ -40,4 +40,8 @@ roger_plast_prod_fournisseurs:
 
 roger_plast_prod_stocks:
     path:    /Stocks
-    defaults: { _controller: ROGERPlastProdBundle:Stocks:indix}
+    defaults: { _controller: ROGERPlastProdBundle:Stocks:index}
+
+roger_plast_prod_config:
+    path:    /Config
+    defaults: {_controller: ROGERPlastProdBundle:Config:index}

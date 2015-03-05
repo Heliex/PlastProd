@@ -315,5 +315,19 @@
 	{
 		height: 600px;
 	}
-
+	
+	.btn-config
+	{
+		margin-top : 15%;
+	}
+	
+	.btn-config:hover
+	{
+		margin-top : 15%;
+		transform: scale(1.05);
+		-ms-transform: scale(1.05);
+		-webkit-transform: scale(1.05);
+		-o-transform: scale(1.05);
+		-moz-transform: scale(1.05);
+	}
 }
