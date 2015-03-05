@@ -18,30 +18,6 @@ class StocksController extends Controller
 		$module = "Stocks";
 		return $this->render("ROGERPlastProdBundle:Stocks:stocks.html.twig",array('module'=>$module));
 	}
-
-	public function stockageAction()
-	{
-		$module = "Stocks";
-		return $this->render("ROGERPlastProdBundle:Stocks:stockage.html.twig",array('module'=>$module));
-	}
-	
-	public function expeditionAction()
-	{
-		$module = "Stocks";
-		return $this->render("ROGERPlastProdBundle:Stocks:expedition.html.twig",array('module'=>$module));
-	}
-	
-	public function matieresAction()
-	{
-		$module = "Stocks";
-		return $this->render("ROGERPlastProdBundle:Stocks:matieres.html.twig",array('module'=>$module));
-	}
-	
-	public function inventaireAction()
-	{
-		$module = "Stocks";
-		return $this->render("ROGERPlastProdBundle:Stocks:inventaire.html.twig",array('module'=>$module));
-	}
 	
 	public function nomenclatureAction()
 	{
@@ -49,11 +25,10 @@ class StocksController extends Controller
 		return $this->render("ROGERPlastProdBundle:Stocks:nomenclature.html.twig",array('module'=>$module));
 	}
 	
-	public function gestionMPAction()
+	public function matieresAction()
 	{
 		$module = "Stocks";
-		return $this->render("ROGERPlastProdBundle:Stocks:gestionMatieresPremieres.html.twig",array('module'=>$module));
+		return $this->render("ROGERPlastProdBundle:Stocks:matieres.html.twig",array('module'=>$module));
 	}
-	
 }
 ?>
