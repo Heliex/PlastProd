@@ -8,8 +8,8 @@
 
 {% block actions %}
 <div id="button_container">
-	<button class = "cust_butt"><p><a class = "liens" href = "{{ path('roger_plast_prod_client_infos') }}">Visualiser les infos de l'entreprise.</a></p></button></br>
-	<button class = "cust_butt"><p><a class = "liens" href = "{{ path('roger_plast_prod_client_communique')}}">Communiquer avec l'entreprise.</a></p></button></br>
-	<button class = "cust_butt"><p><a class = "liens" href = "{{ path('roger_plast_prod_client_suivi')}}">Suivre votre commande.</a></p></button>
+	<a class = "liens" href = "{{ path('roger_plast_prod_client_infos') }}"><button class = "cust_butt"><p>Visualiser les infos de l'entreprise.</p></button></a>
+	<a class = "liens" href = "{{ path('roger_plast_prod_client_communique')}}"><button class = "cust_butt"><p>Communiquer avec l'entreprise.</p></button></a>
+	<a class = "liens" href = "{{ path('roger_plast_prod_client_suivi')}}"><button class = "cust_butt"><p>Suivre votre commande.</p></button></a>
 </div>
 {% endblock %}

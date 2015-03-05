@@ -23,13 +23,13 @@ class PlastProdController extends Controller
 	public function connexionAction(Request $request)
 	{	
 		$user =$this->getUser();
-		if(null == $user)
+		if(!null == $user)
 		{
-			$user = "invité";
+			$user = $user->getUsername();
 		}
 		else
 		{
-			$user = $user->getUsername();
+			
 		}
 		return $this->render('ROGERPlastProdBundle:PlastProd:userInfo.html.twig',array("user" => $user));
 	}

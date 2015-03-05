@@ -1,0 +1,13 @@
+{# Vue qui correspond au module Panneau de config , Partie gestion des accès#}
+
+{% extends 'ROGERPlastProdBundle:PlastProd:index.html.twig' %}
+
+{% block title %}
+<title>Panneau de configuration - Gestion des accès - PlastProd </title>
+{% endblock %}
+
+{% block actions %}
+<a class = "liens" href="#"><button class="cust_butt"><p>Ajouter un accès à un/des utilisateur(s)</p></button></a>
+<a class = "liens" href="#"><button class="cust_butt"><p>Supprimer l'accès à un/des utilisateur(s)</p></button></a>
+<a class = "liens" href="#"><button class="cust_butt"><p>Modifier l'accès d'un/de plusieurs utilisateur(s)</p></button></a>
+{% endblock %}

@@ -16,7 +16,13 @@ class FournisseursController extends Controller
 	public function fournisseursAction()
 	{
 		$module = "Fournisseurs";
-		return $this->render("ROGERPlastProdBundle:Fournisseurs:fournisseurs.html.twig",array('module'=>$module));
+		$repository = $this->getDoctrine()->getManager()->getRepository("ROGERPlastProdBundle:Fournisseur");
+		
+		// On récupère la liste des fournisseurs
+		$listeFournisseurs = $repository->getAllFournisseurs();
+		
+		
+		return $this->render("ROGERPlastProdBundle:Fournisseurs:fournisseurs.html.twig",array('module'=>$module,'fournisseurs' => $listeFournisseurs));
 	}
 	
 	// Fonction qui fais le lien entre PlastProd/fournisseurs/LancerProd Et la vue associée

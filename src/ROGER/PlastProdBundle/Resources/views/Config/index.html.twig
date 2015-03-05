@@ -7,8 +7,6 @@
 {% endblock %}
 
 {% block actions %}
-<div>
-<p>Gérer les droits.</p>
-<p>Gérer les accès.</p>
-</div>
+<a class="liens" href = "{{ path('roger_plast_prod_config_droits')}}"><button class ="cust_butt_config"><p>Gérer les droits.</p></button></a>
+<a class="liens" href = "{{ path('roger_plast_prod_config_acces')}}"><button class ="cust_butt_config"><p>Gérer les accès.</p></button></a>
 {% endblock %}

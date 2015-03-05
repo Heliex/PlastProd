@@ -167,6 +167,11 @@
 		background-size: 110%;
 		background-repeat: no-repeat;
 		background-position: 25px -10px;
+		transform: scale(1.05);
+		-ms-transform: scale(1.05);
+		-webkit-transform: scale(1.05);
+		-o-transform: scale(1.05);
+		-moz-transform: scale(1.05);
 	}
 	
 	.btn-production
@@ -190,6 +195,11 @@
 		background-size: 110%;
 		background-repeat: no-repeat;
 		background-position: 10px -5px;
+		transform: scale(1.05);
+		-ms-transform: scale(1.05);
+		-webkit-transform: scale(1.05);
+		-o-transform: scale(1.05);
+		-moz-transform: scale(1.05);
 	}
 	
 	.btn-fournisseurs
@@ -213,6 +223,11 @@
 		background-size: 110%;
 		background-repeat: no-repeat;
 		background-position: 3px 15px;
+		transform: scale(1.05);
+		-ms-transform: scale(1.05);
+		-webkit-transform: scale(1.05);
+		-o-transform: scale(1.05);
+		-moz-transform: scale(1.05);
 	}
 	
 	.btn-stocks
@@ -236,6 +251,11 @@
 		background-size: 110%;
 		background-repeat: no-repeat;
 		background-position: 25px -15px;
+		transform: scale(1.05);
+		-ms-transform: scale(1.05);
+		-webkit-transform: scale(1.05);
+		-o-transform: scale(1.05);
+		-moz-transform: scale(1.05);
 	}
 	
 	.img-l
@@ -297,13 +317,23 @@
 		font-size: 2em;
 		background-color: #E8E8E8;
 	}
-
-	.cust_butt a
+	
+	.cust_butt_config
+	{
+		width: 100%;
+		height: 50%;
+		opacity: 0.5;
+		font-family: Comic Sans MS;
+		font-size: 2em;
+		background-color: #E8E8E8;
+	}
+	
+	.cust_butt a, .cust_butt_config a
 	{
 		color: black;
 	}
 
-	.cust_butt:hover
+	.cust_butt:hover, .cust_butt_config:hover
 	{
 		opacity: 0.25;
 		background-color: #D0C5C0;
@@ -329,5 +359,19 @@
 		-webkit-transform: scale(1.05);
 		-o-transform: scale(1.05);
 		-moz-transform: scale(1.05);
+	}
+	
+	.fournisseurs
+	{
+		text-align : center;
+		font-family : Comic Sans MS;
+		font-size : 1.2em;
+		font: bold;
+		color : White;
+	}
+	
+	.fournisseurs table tr td
+	{
+		width : 300px;
 	}
 }

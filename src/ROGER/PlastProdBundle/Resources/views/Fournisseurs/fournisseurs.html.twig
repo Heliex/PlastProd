@@ -7,7 +7,23 @@
 {% endblock %}
 
 {% block actions %}
-<div>
-<p>fournisseur</p>
+<div class="fournisseurs">
+	<table>
+		<tr>
+			<td>Nom</td>
+			<td>Adresse</td>
+			<td>Numéro de téléphone</td>
+			<td>Représentant de l'entreprise</td>
+		</tr>
+		<tr>
+		{% for fournisseur in fournisseurs %}
+			<td>{{ fournisseur.nom }}</td>
+			<td>{{ fournisseur.adresse }}</td>
+			<td>{{ fournisseur.numero }}</td>
+			<td>{{ fournisseur.representant }}</td>
+		{% endfor %}
+		</tr>
+	</table>
 </div>
+
 {% endblock %}

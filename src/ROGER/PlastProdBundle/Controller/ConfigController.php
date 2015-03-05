@@ -16,5 +16,17 @@ class ConfigController extends Controller
 		$module = "Panneau de configuration";
         return $this->render('ROGERPlastProdBundle:Config:index.html.twig', array('module' => $module));
     }
+	
+	public function accesAction()
+    {
+		$module = "Panneau de configuration";
+        return $this->render('ROGERPlastProdBundle:Config:acces.html.twig', array('module' => $module));
+    }
+	
+	public function droitsAction()
+    {
+		$module = "Panneau de configuration";
+        return $this->render('ROGERPlastProdBundle:Config:droits.html.twig', array('module' => $module));
+    }
 }
 ?>

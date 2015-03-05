@@ -12,4 +12,18 @@ use Doctrine\ORM\EntityRepository;
  */
 class FournisseurRepository extends EntityRepository
 {
+	public function getAllFournisseurs()
+	{
+		// Création du query builder
+		$queryBuilder = $this->createQueryBuilder('f');
+		
+		// Récupération de la réquête
+		$query = $queryBuilder->getQuery();
+		
+		// Récupération du résultat de la requête
+		$results = $query->getResult();
+		
+		return $results;
+		
+	}
 }

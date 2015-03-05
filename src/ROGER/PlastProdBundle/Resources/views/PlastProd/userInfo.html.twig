@@ -1,8 +1,8 @@
 {# Vue qui affiche le nom d'utilisateur s'il est connecté  sinon affiche invité  #}
 <div class = "content">
 	<div class = "connexion">
-				<p><span>Vous êtes connecté en tant que : {{ user }}
 				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+				<p><span>Vous êtes connecté en tant que : {{ user }}
 				<a href="{{ path('fos_user_security_logout') }}"> <br />Déconnexion</a>
 				{% endif %}
 				</span>
