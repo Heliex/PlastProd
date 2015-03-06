@@ -128,4 +128,14 @@ class Matiere
     {
         return $this->prix;
     }
+	
+	public function getFournisseur()
+	{
+		return $this->fournisseur;
+	}
+	
+	public function setFournisseur(Fournisseur $fournisseur)
+	{
+		$this->fournisseur = $fournisseur;
+	}
 }

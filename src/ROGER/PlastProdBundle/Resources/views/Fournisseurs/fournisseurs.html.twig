@@ -15,14 +15,15 @@
 			<td>Numéro de téléphone</td>
 			<td>Représentant de l'entreprise</td>
 		</tr>
-		<tr>
 		{% for fournisseur in fournisseurs %}
+		<tr>
 			<td>{{ fournisseur.nom }}</td>
 			<td>{{ fournisseur.adresse }}</td>
 			<td>{{ fournisseur.numero }}</td>
 			<td>{{ fournisseur.representant }}</td>
-		{% endfor %}
 		</tr>
+		{% endfor %}
+
 	</table>
 </div>
 

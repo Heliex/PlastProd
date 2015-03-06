@@ -24,7 +24,14 @@ class Commande
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+	
+	/**
+	* @var integer
+	*
+	* @ORM\Column(name="numCommande", type="integer")
+	*/
+	private $numCommande;
+	
     /**
      * @var \DateTime
      *
@@ -39,7 +46,12 @@ class Commande
      */
     private $total;
 
-
+	/**
+	* @var integer
+	* 
+	* @ORM\Column(name="estComplet", type ="integer")
+	*/
+	private $estComplet;
     /**
      * Get id
      *
@@ -95,4 +107,35 @@ class Commande
     {
         return $this->total;
     }
+	
+	public function getNumCommande()
+	{
+		return $this->numCommande;
+	}
+	
+	public function setNumCommande($num)
+	{
+		$this->numCommande = $num;
+		return $this;
+	}
+	
+	public function getClient()
+	{
+		return $this->client;
+	}
+	
+	public function setClient(Client $client)
+	{
+		$this->client = $client;
+	}
+	
+	public function getEstComplet()
+	{
+		return $this->estComplet;
+	}
+	
+	public function setEstComplet(boolean $estComplet)
+	{
+			$this->estComplet = $estComplet;
+	}
 }

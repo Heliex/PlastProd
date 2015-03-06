@@ -12,4 +12,18 @@ use Doctrine\ORM\EntityRepository;
  */
 class CommandeRepository extends EntityRepository
 {
+		public function getAllCommandes()
+	{
+		// Création du query builder
+		$queryBuilder = $this->createQueryBuilder('c');
+		
+		// Récupération de la réquête
+		$query = $queryBuilder->getQuery();
+		
+		// Récupération du résultat de la requête
+		$results = $query->getResult();
+		
+		return $results;
+		
+	}
 }
