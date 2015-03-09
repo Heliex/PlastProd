@@ -63,8 +63,7 @@ class StocksController extends Controller
 		$module = "Stocks";
 		$em = $this->getDoctrine()->getManager();
 		$repository = $this->getDoctrine()->getManager()->getRepository('ROGERPlastProdBundle:Commande');
-		$listeCommande = $repository->getAllCommandes();
-		
+		$listeCommande = $repository->findAll();
 		$collections = new ListeCommande(); // Nouvelle collections de commande
 		foreach($listeCommande as $commande)
 		{
