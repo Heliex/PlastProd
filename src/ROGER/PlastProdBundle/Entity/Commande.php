@@ -49,7 +49,7 @@ class Commande
 	/**
 	* @var integer
 	* 
-	* @ORM\Column(name="estComplet", type ="integer")
+	* @ORM\Column(name="estComplet", type ="boolean")
 	*/
 	private $estComplet;
     /**
@@ -134,8 +134,8 @@ class Commande
 		return $this->estComplet;
 	}
 	
-	public function setEstComplet(boolean $estComplet)
+	public function setEstComplet($complet)
 	{
-			$this->estComplet = $estComplet;
+		$this->estComplet = $complet;
 	}
 }

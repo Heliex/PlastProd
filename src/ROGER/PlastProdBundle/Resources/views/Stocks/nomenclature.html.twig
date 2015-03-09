@@ -7,22 +7,5 @@
 {% endblock %}
 
 {% block actions %}
-<table>
-	<tr>
-		<td>Id commande</td>
-		<td>Numéro de commande </td>
-		<td>date de la commande</td>
-		<td>Est compléte</td>
-		<td>Prix total</td>
-	</tr>
-	{% for commande in commandes %}
-		<tr>
-			<td> {{ commande.id}}</td>
-			<td> {{ commande.numCommande }}</td>
-			<td>{{  commande.dateCommande | date("d/m/Y") }}</td>
-			<td> {{ commande.estComplet }}</td>
-			<td>{{ commande.total }}</td>
-		</tr>
-	{% endfor %}
-</table>
+{{ form(form) }}
 {% endblock %}
