@@ -26,12 +26,16 @@ roger_plast_prod_production_lancement:
     path:    /Production/LancerProd
     defaults: { _controller: ROGERPlastProdBundle:Production:lancement}
 
+roger_plast_prod_production_superviser:
+    path:    /Production/Superviser
+    defaults: { _controller: ROGERPlastProdBundle:Production:superviser}
+
 roger_plast_prod_production_etiquette:
-    path:   /Production/Etiquettes
+    path:   /Production/Superviser/Etiquettes
     defaults: { _controller: ROGERPlastProdBundle:Production:etiquette}
 
 roger_plast_prod_production_jeter:
-    path:    /Production/ProduitsDefaillants
+    path:    /Production/Superviser/ProduitsDefaillants
     defaults: { _controller: ROGERPlastProdBundle:Production:jeter}
 
 roger_plast_prod_fournisseurs:

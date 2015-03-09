@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Commande
 {
 	/**
-	* @ORM\OneToOne(targetEntity="ROGER\PlastProdBundle\Entity\Client", cascade={"persist"})
+	* @ORM\ManyToOne(targetEntity="ROGER\PlastProdBundle\Entity\Client", cascade={"persist"})
 	*/
 	private $client;
     /**

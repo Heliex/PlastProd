@@ -406,4 +406,28 @@
 	{
 		margin-top : 3%;
 	}
+	
+	.infos
+	{
+		text-align : center;
+	}
+
+	.infos table
+	{
+		margin-left : 2%;
+		margin-top : 5%;
+		width : 100%;
+		text-align : center;
+	}
+	.infos table td
+	{
+		text-align : left;
+		padding-right: 3%;
+		padding-top : 2%;
+	}
+	#maps
+	{
+		width : 100%;
+		height : 20%;
+	}
 }

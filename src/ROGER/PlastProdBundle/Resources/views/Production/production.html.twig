@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block actions %}
-	<a class = "liens" href = "{{ path('roger_plast_prod_production_lancement') }}"><button class="cust_butt"><p>Lancement de production ( BDC Obligatoire).</p></button></a>
-	<a class = "liens" href = "{{ path('roger_plast_prod_production_etiquette')}}"><button class="cust_butt"><p>Visualisation des étiquettes.</p></button></a>
-	<a class = "liens" href = "{{ path('roger_plast_prod_production_jeter')}}"><button class="cust_butt"><p>Visualisation des produits déféctueux.</p></button></a>
+	<a class = "liens" href = "{{ path('roger_plast_prod_production_lancement') }}"><button class="cust_butt_stocks"><p>Visualisation des bons de commandes</p></button></a>
+	<a class = "liens" href = "{{ path('roger_plast_prod_production_superviser')}}"><button class="cust_butt_stocks"><p>Supervision de la production</p></button></a>
 {% endblock %}

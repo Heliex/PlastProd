@@ -39,5 +39,11 @@ class ProductionController extends Controller
 		$module = "Production";
 		return $this->render("ROGERPlastProdBundle:Production:produitsDefaillants.html.twig",array('module'=>$module));
 	}
+	
+	public function superviserAction()
+	{
+		$module = "Production";
+		return $this->render("ROGERPlastProdBundle:Production:superviser.html.twig",array('module' => $module));
+	}
 }
 ?>
