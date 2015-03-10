@@ -40,7 +40,6 @@ class StocksController extends Controller
 		foreach($listeMatieres as $matieres)
 		{
 			$collections->getMatiere()->add($matieres); // J'ajoute chaque matiere dans ma collection
-			
 		}
 		
 		$form = $this->createForm(new ListeMatiereType(),$collections)->add('modifier','submit'); // Je crée un formulaire qui contient toutes les matieres modifiables

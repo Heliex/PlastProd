@@ -9,7 +9,7 @@ namespace ROGER\PlastProdBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-
+use ROGER\PlastProdBundle\Entity\Commande;
 
 class ClientController extends Controller
 {
@@ -21,10 +21,26 @@ class ClientController extends Controller
 	}
 	
 	// Vue Suvi pour le client
-	public function suiviAction()
+	public function suiviAction(Request $request)
 	{
+		// Je crée le formulaire pour que le client renseignes la commande qu'il veux suivre.
 		$module = "Client";
-		return $this->render("ROGERPlastProdBundle:Client:suivi.html.twig",array('module'=>$module));
+		$formBuilder = $this->get('form.factory')->createBuilder('form');
+		$formBuilder->add('num','text');
+		$formBuilder->add('consulter','submit');
+		$form = $formBuilder->getForm();
+		
+		// Quand je valide le formulaire
+		if($form->handleRequest($request)->isValid())
+		{
+				// JE le recupere
+				$formulaire = $this->getRequest()->request->get('form');
+				$numCommande = $formulaire['num']; // Puis je recupere le numéro de commande 
+				$repository=$this->getDoctrine()->getManager()->getRepository('ROGERPlastProdBundle:Commande');
+				$commande = $repository->findByNumCommande($numCommande);	// Avec ça je tape la BDD et je récupère la commande 
+			return $this->render('ROGERPlastProdBundle:Client:suivi.html.twig',array('module' => $module, 'commande' => $commande)); // Que je renvoi dans la vue
+		}
+		return $this->render("ROGERPlastProdBundle:Client:suivi.html.twig",array('module'=>$module, 'form' => $form->createView()));
 	}
 	
 	// Vue pour les infos entreprise

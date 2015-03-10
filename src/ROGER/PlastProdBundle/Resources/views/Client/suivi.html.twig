@@ -7,4 +7,29 @@
 {% endblock %}
 
 {% block actions %}
+{% if form is defined %}
+<p> Saisissez le numéro de commande que vous voulez suivre : </p>
+<p>{{ form(form) }} </p>
+{% elseif  commande is defined%}
+<p>Suivi de votre commande : </p>
+<table>
+	<thead>
+		<th> Numéro de la commande </th>
+		<th> Prix de la commande </th>
+		<th> Date de la commande </th>
+		<th>Expédiée</th>
+		<th>Date d'expédition</th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>{{ commande[0].numCommande }}</td>
+			<td>{{ commande[0].total }}</td>
+			<td>{{ commande[0].dateCommande | date('d/m/y') }}</td>
+			<td>{{ commande[0].estComplet }}</td>
+			<td>{{ commande[0].dateSortie | date('d/m/y')}}</td>
+		</tr>
+	</tbody>
+</table>
+{% endif %}
+
 {% endblock %}
