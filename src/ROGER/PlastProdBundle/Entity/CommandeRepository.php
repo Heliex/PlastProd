@@ -26,4 +26,61 @@ class CommandeRepository extends EntityRepository
 		return $results;
 		
 	}
+	
+	public function getLastCommandeExpediee()
+	{
+		$queryBuilder = $this->_em->createQueryBuilder()
+													->select('c.numCommande, c.total, c.dateSortie')
+													->from($this->_entityName, 'c')
+													->orderBy('c.dateSortie','DESC')
+													->setMaxResults(1);
+		$query = $queryBuilder->getQuery();
+		$results  = $query->getResult();
+		
+		return $results;
+	}
+	
+	public function getLastCommandeLancee()
+	{
+			$queryBuilder = $this->_em->createQueryBuilder()
+													->select('c.numCommande, c.total, c.dateLancement')
+													->from($this->_entityName, 'c')
+													->orderBy('c.dateLancement','DESC')
+													->setMaxResults(1);
+		$query = $queryBuilder->getQuery();
+		$results  = $query->getResult();
+		
+		return $results;
+	}
+	
+	public function getNameOfLastCommande()
+	{
+		$queryBuilder = $this->_em->createQueryBuilder()
+													->select('c.numCommande, c.total, c.dateCommande, d.nom, d.prenom')
+													->from($this->_entityName, 'c')
+													->join('c.client','d')
+													->orderBy('c.dateCommande','DESC')
+													->setMaxResults(1);
+		$query = $queryBuilder->getQuery();
+		$results  = $query->getResult();
+		
+		return $results;
+	}
+	
+	public function getBestClient()
+	{
+			$queryBuilder = $this->_em->createQueryBuilder()
+													->select('count(c) as idcount, d.nom,d.prenom')
+													->from($this->_entityName, 'c')
+													->join('c.client','d')
+													->where('d.id = c.client')
+													->groupBy('d.id')
+													->orderBy('idcount','DESC')
+													->setMaxResults(1);
+		$query = $queryBuilder->getQuery();
+		$results  = $query->getResult();
+		
+		return $results;
+	}
+	
 }

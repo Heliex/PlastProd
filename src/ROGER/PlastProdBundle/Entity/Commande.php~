@@ -39,6 +39,13 @@ class Commande
 	*/
 	private $dateSortie;
 	
+	/**
+	* @var \DateTime
+	*
+	* @ORM\Column(name="Date_Lancement",type="date")
+	*/
+	private $dateLancement;
+	
     /**
      * @var \DateTime
      *
@@ -145,4 +152,27 @@ class Commande
 	{
 		$this->estComplet = $complet;
 	}
+
+    /**
+     * Set dateSortie
+     *
+     * @param \DateTime $dateSortie
+     * @return Commande
+     */
+    public function setDateSortie($dateSortie)
+    {
+        $this->dateSortie = $dateSortie;
+
+        return $this;
+    }
+
+    /**
+     * Get dateSortie
+     *
+     * @return \DateTime 
+     */
+    public function getDateSortie()
+    {
+        return $this->dateSortie;
+    }
 }

@@ -39,6 +39,13 @@ class Commande
 	*/
 	private $dateSortie;
 	
+	/**
+	* @var \DateTime
+	*
+	* @ORM\Column(name="Date_Lancement",type="date")
+	*/
+	private $dateLancement;
+	
     /**
      * @var \DateTime
      *
@@ -167,5 +174,28 @@ class Commande
     public function getDateSortie()
     {
         return $this->dateSortie;
+    }
+
+    /**
+     * Set dateLancement
+     *
+     * @param \DateTime $dateLancement
+     * @return Commande
+     */
+    public function setDateLancement($dateLancement)
+    {
+        $this->dateLancement = $dateLancement;
+
+        return $this;
+    }
+
+    /**
+     * Get dateLancement
+     *
+     * @return \DateTime 
+     */
+    public function getDateLancement()
+    {
+        return $this->dateLancement;
     }
 }
