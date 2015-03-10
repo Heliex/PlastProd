@@ -38,7 +38,14 @@ class ClientController extends Controller
 	public function communiqueAction()
 	{
 		$module = "Client";
-		return $this->render("ROGERPlastProdBundle:Client:communique.html.twig",array('module'=>$module));
+		$formBuilder = $this->get('form.factory')->createBuilder('form');
+		$formBuilder->add('titre','text');
+		$formBuilder->add('auteur','text');
+		$formBuilder->add('contenu','textarea');
+		$formBuilder->add('date','date');
+		$formBuilder->add('Envoyer','submit');
+		$form = $formBuilder->getForm();
+		return $this->render("ROGERPlastProdBundle:Client:communique.html.twig",array('module'=>$module,'form' => $form->createView()));
 	}
 }
 ?>
