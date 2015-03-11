@@ -162,40 +162,4 @@ class Nomenclature
     {
         return $this->tempsAssemblage;
     }
-
-    /**
-     * Set id
-     *
-     * @param integer $id
-     * @return Nomenclature
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
-     * Set affectation_matiere
-     *
-     * @param integer $affectationMatiere
-     * @return Nomenclature
-     */
-    public function setAffectationMatiere($affectationMatiere)
-    {
-        $this->affectation_matiere = $affectationMatiere;
-
-        return $this;
-    }
-
-    /**
-     * Get affectation_matiere
-     *
-     * @return integer 
-     */
-    public function getAffectationMatiere()
-    {
-        return $this->affectation_matiere;
-    }
 }

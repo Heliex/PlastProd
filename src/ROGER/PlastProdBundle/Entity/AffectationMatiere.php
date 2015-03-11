@@ -8,15 +8,15 @@ use Doctrine\ORM\Mapping as ORM;
  * Affectation_Matiere
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="ROGER\PlastProdBundle\Entity\Affectation_MatiereRepository")
+ * @ORM\Entity(repositoryClass="ROGER\PlastProdBundle\Entity\AffectationMatiereRepository")
  */
-class Affectation_Matiere
+class AffectationMatiere
 {
-
+	
 	/**
-	* @ORM\ManyToOne(targetEntity="ROGER\PlastProdBundle\Entity\Nomenclature") 
+	* @ORM\ManyToOne(targetEntity="ROGER\PlastProdBundle\Entity\Nomenclature")
 	*/
-	private $affectation_matiere;
+	private $nomenclature;
 	
 	/**
 	* @ORM\ManyToOne(targetEntity="ROGER\PlastProdBundle\Entity\Matiere")

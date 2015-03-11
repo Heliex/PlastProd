@@ -13,7 +13,9 @@
 	</div>
 	
 	<div class = "module">
-	<p> {{ module }}<p>
+	{% if module is defined %}
+	<p> {{ module }}</p>
+	{% endif %}
 	</div>
 	
 	<div class = "action">

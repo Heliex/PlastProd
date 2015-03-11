@@ -16,8 +16,7 @@ class PlastProdController extends Controller
 {
     public function indexAction()
     {
-		$module = "Aucun";
-        return $this->render('ROGERPlastProdBundle:PlastProd:index.html.twig', array('module' => $module));
+        return $this->render('ROGERPlastProdBundle:PlastProd:index.html.twig');
     }
 	
 	// Action qui renvoie le vue du formulaire quand quelqu'un veux se connecter

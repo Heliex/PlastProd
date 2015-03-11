@@ -8,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * Affectation_commande
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="ROGER\PlastProdBundle\Entity\Affectation_commandeRepository")
+ * @ORM\Entity(repositoryClass="ROGER\PlastProdBundle\Entity\AffectationcommandeRepository")
  */
-class Affectation_commande
+class AffectationCommande
 {
 	/**
 	* @ORM\OneToOne(targetEntity="ROGER\PlastProdBundle\Entity\Commande", cascade={"persist"})

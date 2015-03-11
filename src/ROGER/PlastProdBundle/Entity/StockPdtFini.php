@@ -8,9 +8,9 @@ use Doctrine\ORM\Mapping as ORM;
  * Stock_Pdt_Fini
  *
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="ROGER\PlastProdBundle\Entity\Stock_Pdt_FiniRepository")
+ * @ORM\Entity(repositoryClass="ROGER\PlastProdBundle\Entity\StockPdtFiniRepository")
  */
-class Stock_Pdt_Fini
+class StockPdtFini
 {
 
 	/**

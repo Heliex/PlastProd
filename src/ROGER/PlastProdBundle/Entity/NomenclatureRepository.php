@@ -12,4 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class NomenclatureRepository extends EntityRepository
 {
+	public function getListeNomenclature()
+	{
+			$queryBuilder = $this->_em->createQueryBuilder()
+													->select('n')
+													->from($this->_entityName, 'n');
+		$query = $queryBuilder->getQuery();
+		$results  = $query->getResult();
+		
+		return $results;
+	}
 }

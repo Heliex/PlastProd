@@ -27,6 +27,7 @@ class CommandeRepository extends EntityRepository
 		
 	}
 	
+	// Retourne la derniere commande expédiée
 	public function getLastCommandeExpediee()
 	{
 		$queryBuilder = $this->_em->createQueryBuilder()
@@ -40,6 +41,7 @@ class CommandeRepository extends EntityRepository
 		return $results;
 	}
 	
+	// Retourne la deriere commande lancée en prod
 	public function getLastCommandeLancee()
 	{
 			$queryBuilder = $this->_em->createQueryBuilder()
@@ -53,6 +55,7 @@ class CommandeRepository extends EntityRepository
 		return $results;
 	}
 	
+	// Retourne le derniere client a avoir commandé 
 	public function getNameOfLastCommande()
 	{
 		$queryBuilder = $this->_em->createQueryBuilder()
@@ -67,6 +70,7 @@ class CommandeRepository extends EntityRepository
 		return $results;
 	}
 	
+	// Retourne le client qui a passé le plus de commande 
 	public function getBestClient()
 	{
 			$queryBuilder = $this->_em->createQueryBuilder()
@@ -83,4 +87,16 @@ class CommandeRepository extends EntityRepository
 		return $results;
 	}
 	
+	public function getCommandeNonComplete()
+	{
+		$queryBuilder = $this->_em->createQueryBuilder()
+													->select('c')
+													->from($this->_entityName,'c')
+													->where('c.estComplet = 0');
+		$query = $queryBuilder->getQuery();
+		$results = $query->getResult();
+		
+		return $results;
+		
+	}
 }
