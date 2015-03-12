@@ -7,20 +7,27 @@
 
 {% block actions %}
 
-<table>
+{{ form_start(form)}}
+<table class="lancerProd">
 	<thead>
-		<th>Id de la commande</th>
-		<th>Date de la commande</th>
-		<th>Lancer la production</th>
+		<th> Numéro de la commande </th>
+		<th> Date de la commande </th>
+		<th> Produire ? </th>
 	</thead>
 	<tbody>
-		{% for commande in commandes %}
+	{% for champ in form.commande %}
 		<tr>
-			<td>{{ commande.id }}</td>
-			<td>{{ commande.dateCommande | date('d/m/y') }} </td>
-			<td></td>
+			<td>{{ form_widget(champ.numCommande) }}</td>
+			<td style='display:none;'>{{ form_widget(champ.total) }}</td>
+			<td>{{ form_widget(champ.dateCommande) }}</td>
+			<td style='display:none;'>{{ form_widget(champ.estComplet) }}</td>
+			<td>{{ form_widget(champ.estProduite) }}</td>
 		</tr>
-		{% endfor %}
+	{% endfor %}
+	<tr>
+		<td>{{ form_widget(form.Valider) }}</td>
+	</tr>
 	</tbody>
 </table>
+{{ form_end(form) }}
 {% endblock %}

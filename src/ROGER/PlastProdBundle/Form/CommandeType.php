@@ -15,10 +15,11 @@ class CommandeType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('numCommande','text',array('read_only' => true,'disabled' => true))
-            ->add('dateCommande','date', array('read_only' => true , 'disabled' => true))
-            ->add('total' ,'text', array('read_only' => true , 'disabled' => true))
+            ->add('numCommande','text',array('read_only' => true,'disabled' => true,'required' => false))
+            ->add('total' ,'text', array('read_only' => true , 'disabled' => true,'required' => false))
+			->add('dateCommande','date', array('read_only' => true , 'disabled' => true, 'required' => false))
             ->add('estComplet','checkbox', array('required' => false))
+			->add('estProduite','checkbox',array('required' => false))
         ;
     }
     
