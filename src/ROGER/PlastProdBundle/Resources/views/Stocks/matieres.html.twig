@@ -7,5 +7,23 @@
 {% endblock %}
 
 {% block actions %}
-{{ form(form)}}
+{{ form_start(form) }}
+<table class = "table_matieres">
+	<thead>
+		<th> Nom de la matière </th>
+		<th> Quantité en stock </th>
+	</thead>
+	<tbody>
+		{% for champ in form.matiere %}
+			<tr>
+				<td>{{ form_widget(champ.nom) }}</td>
+				<td>{{ form_widget(champ.quantiteStock) }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+	<tr>
+		<td> {{ form_widget(form.modifier) }}</td>
+	</tr>
+</table>
+{{ form_end(form) }}
 {% endblock %}

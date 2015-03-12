@@ -71,16 +71,6 @@ class ProductionController extends Controller
 		}
 		
 		$form = $this->createForm(new ListeStockPdtFiniType(),$collectionsStockPdtFini); // Je crée un formulaire qui contient toutes les matieres modifiables
-		
-		/*if($form->handleRequest($request)->isValid()) // Gestion de la soumission du formulaire
-			{
-				foreach($collectionsCommande->getCommande()->toArray() as $collect) // Pour chaque commande
-				{
-					$em->persist($collect); // Je persiste les données
-				}
-				$em->flush(); // Puis j'applique les changement 
-				return $this->redirect($this->generateUrl('roger_plast_prod_production_lancement')); // Et enfin je redirige vers la page de lancement de production.
-			}*/
 		return $this->render("ROGERPlastProdBundle:Production:superviser.html.twig",array('module' => $module,'form' => $form->createView()));
 	}
 }

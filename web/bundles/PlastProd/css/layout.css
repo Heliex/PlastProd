@@ -385,21 +385,20 @@
 	}
 	
 	
-	.lancerProd th, .lancerProd td, .superviser th, .superviser td
+	.lancerProd th, .lancerProd td, .superviser th, .superviser td, .table_nomenclature th, .table_nomenclature td, .table_matieres th, .table_matieres td
 	{
 		text-align : center;
-		width : 250px;
-		padding-left : 5%;
+		width : 250px;	
 	}
 	
-	.lancerProd button, .valid button
+	.lancerProd button, .valid button, .table_nomenclature button, .table_matieres button
 	{
 		margin-top : 10%;
 		width : 80%;
 		height : 60px;
 	}
 	
-	.lancerProd, .superviser
+	.lancerProd, .superviser, .table_nomenclature, .table_matieres
 	{
 		background-color : rgba(242,137,61,0.7);
 		font-family : Comic Sans MS;

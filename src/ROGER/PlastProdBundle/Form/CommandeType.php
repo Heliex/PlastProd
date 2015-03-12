@@ -19,6 +19,7 @@ class CommandeType extends AbstractType
             ->add('total' ,'text', array('read_only' => true , 'disabled' => true,'required' => false))
 			->add('dateCommande','date', array('read_only' => true , 'disabled' => true, 'required' => false))
             ->add('estComplet','checkbox', array('required' => false))
+			->add('estExpediee','checkbox', array('required' => false))
 			->add('estProduite','checkbox',array('required' => false))
         ;
     }

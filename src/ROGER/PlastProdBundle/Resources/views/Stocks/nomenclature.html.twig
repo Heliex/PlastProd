@@ -9,9 +9,31 @@
 {% block actions %}
 
 {{ form_start(form) }}
-{{ form_label(form.commande,"Commande maggle") }}
-{{ form_widget(form.commande) }}
-
+<table class="table_nomenclature">
+	<thead>
+		<th>Numéro de commande</th>
+		<th>Total de la commande</th>
+		<th>Date de la commande</th>
+		<th> Commande complète </th>
+		<th> Commande expédiee </th>
+		<th> Commande produite </th>
+	</thead>
+	<tbody>
+		{% for champ in form.commande %}
+			<tr>
+				<td>{{ form_widget(champ.numCommande) }}</td>
+				<td>{{ form_widget(champ.total) }} €</td>
+				<td>{{ form_widget(champ.dateCommande) }}</td>
+				<td>{{ form_widget(champ.estComplet) }}</td>
+				<td>{{ form_widget(champ.estExpediee) }}</td>
+				<td>{{ form_widget(champ.estProduite) }}</td>
+			</tr>
+		{% endfor %}
+		<tr>
+			<td>{{ form_widget(form.modifier) }}</td>
+		</tr>
+	</tbody>
+</table>
 {{ form_end(form) }}
 
 {% endblock %}
