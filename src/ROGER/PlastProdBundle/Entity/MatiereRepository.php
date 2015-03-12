@@ -12,4 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class MatiereRepository extends EntityRepository
 {
+	public function getAllMatieres()
+	{
+			$queryBuilder = $this->_em->createQueryBuilder()
+													->select('n')
+													->from($this->_entityName, 'n');
+		$query = $queryBuilder->getQuery();
+		$results  = $query->getResult();
+		
+		return $results;
+	}
 }

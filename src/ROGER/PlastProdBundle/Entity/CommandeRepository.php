@@ -99,4 +99,18 @@ class CommandeRepository extends EntityRepository
 		return $results;
 		
 	}
+	
+	public function getTenLastCommande()
+	{
+		$queryBuilder = $this->_em->createQueryBuilder()
+													->select('c')
+													->from($this->_entityName,'c')
+													->where('c.estProduite = 0')
+													->orderBy('c.dateCommande','DESC')
+													->setMaxResults(10);
+		$query = $queryBuilder->getQuery();
+		$results = $query->getResult();
+		
+		return $results;
+	}
 }

@@ -23,7 +23,9 @@ class ProductionController extends Controller
 	public function lancementAction()
 	{
 		$module = "Production";
-		return $this->render("ROGERPlastProdBundle:Production:lancement.html.twig",array('module'=>$module));
+		$repository = $this->getDoctrine()->getManager()->getRepository("ROGERPlastProdBundle:Commande");
+		$commande = $repository->getTenLastCommande();
+		return $this->render("ROGERPlastProdBundle:Production:lancement.html.twig",array('module'=>$module,"commandes"=>$commande));
 	}
 	
 	// Fonction qui fais le lien entre PlastProd/Production/Etiquettes Et la vue associée

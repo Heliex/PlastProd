@@ -26,7 +26,7 @@
 	.notifs p, .content p
 	{
 		font-family : Comic Sans MS ;
-		font-size : 1.2em;
+		font-size : 1.3em;
 		color : White;
 		margin-top : 0px;
 		width : 100%;
@@ -124,138 +124,44 @@
 		text-align : center;
 	}
 	
-	.btn-clients, .btn-production, .btn-fournisseurs, .btn-stocks
+	.btn-client, .btn-production, .btn-fournisseur, .btn-stock
 	{
+		background-color : #9D9C99;
 		margin-top : 20%;
 		font-size : 1.2em;
-		font-family : Arial;
+		font-family : Comic Sans MS;
 		width : 120px;
+		margin-left : 25px;
+		margin-right: 25px;
 		height : 120px;
 		-webkit-border-radius: 50%;
 		-moz-border-radius: 50%;
 		border-radius: 50%;
 		border : none;
 		color : #fff;
-		margin-left : 7.5px;
-		margin-right : 7.5px;
 		-moz-box-shadow: 1px 1px 4px 1px #c0c0c0;
 		-webkit-box-shadow: 1px 1px 4px 1px #c0c0c0;
 		box-shadow: inset 0 0 0 4px #c0c0c0;
 	}
-	
-	
-	
-	
-	.btn-clients
-	{
-		margin-left: 15%;
-		background-color : #9D9C99;
-		background-image: url("../images/labelclients.ico");
-		background-size: 110%;
-		background-repeat: no-repeat;
-		background-position: 25px -10px;
-	}
-	
-	.btn-clients:hover
+	.btn-client:hover, .btn-production:hover, .btn-fournisseur:hover, .btn-stock:hover
 	{
 		height : 120px;
+		font-size : 1.3em;
 		-webkit-border-radius: 40%;
 		-moz-border-radius: 40%;
 		border-radius: 40%;
 		background-color : #8d8c89;
-		background-image: url("../images/labelclients.ico");
-		background-size: 110%;
-		background-repeat: no-repeat;
-		background-position: 25px -10px;
-		transform: scale(1.05);
-		-ms-transform: scale(1.05);
-		-webkit-transform: scale(1.05);
-		-o-transform: scale(1.05);
-		-moz-transform: scale(1.05);
+		transform: scale(1.2);
+		-ms-transform: scale(1.2);
+		-webkit-transform: scale(1.2);
+		-o-transform: scale(1.2);
+		-moz-transform: scale(1.2);
 	}
 	
-	.btn-production
+	.btn-client p, .btn-production p, .btn-fournisseur p , .btn-stock p
 	{
-		margin-left: 15%;
-		background-color : #9D9C99;
-		background-image: url("../images/labelproduction.ico");
-		background-size: 110%;
-		background-repeat: no-repeat;
-		background-position: 10px -5px;
-	}
-	
-	.btn-production:hover
-	{
-		height : 120px;
-		-webkit-border-radius: 40%;
-		-moz-border-radius: 40%;
-		border-radius: 40%;
-		background-color : #8d8c89;
-		background-image: url("../images/labelproduction.ico");
-		background-size: 110%;
-		background-repeat: no-repeat;
-		background-position: 10px -5px;
-		transform: scale(1.05);
-		-ms-transform: scale(1.05);
-		-webkit-transform: scale(1.05);
-		-o-transform: scale(1.05);
-		-moz-transform: scale(1.05);
-	}
-	
-	.btn-fournisseurs
-	{
-		margin-left: 15%;
-		background-color : #9D9C99;
-		background-image: url("../images/labelfournisseurs.ico");
-		background-size: 110%;
-		background-repeat: no-repeat;
-		background-position: 3px 15px;
-	}
-	
-	.btn-fournisseurs:hover
-	{
-		height : 120px;
-		-webkit-border-radius: 40%;
-		-moz-border-radius: 40%;
-		border-radius: 40%;
-		background-color : #8d8c89;
-		background-image: url("../images/labelfournisseurs.ico");
-		background-size: 110%;
-		background-repeat: no-repeat;
-		background-position: 3px 15px;
-		transform: scale(1.05);
-		-ms-transform: scale(1.05);
-		-webkit-transform: scale(1.05);
-		-o-transform: scale(1.05);
-		-moz-transform: scale(1.05);
-	}
-	
-	.btn-stocks
-	{
-		margin-left: 15%;
-		background-color : #9D9C99;
-		background-image: url("../images/labelstocks.ico");
-		background-size: 110%;
-		background-repeat: no-repeat;
-		background-position: 25px -15px;
-	}
-	
-	.btn-stocks:hover
-	{
-		height : 120px;
-		-webkit-border-radius: 40%;
-		-moz-border-radius: 40%;
-		border-radius: 40%;
-		background-color : #8d8c89;
-		background-image: url("../images/labelstocks.ico");
-		background-size: 110%;
-		background-repeat: no-repeat;
-		background-position: 25px -15px;
-		transform: scale(1.05);
-		-ms-transform: scale(1.05);
-		-webkit-transform: scale(1.05);
-		-o-transform: scale(1.05);
-		-moz-transform: scale(1.05);
+		line-height: 120px;
+		vertical-align: center;
 	}
 	
 	.img-l

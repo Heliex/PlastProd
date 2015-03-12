@@ -12,4 +12,19 @@ use Doctrine\ORM\EntityRepository;
  */
 class AffectationCommandeRepository extends EntityRepository
 {
+	public function getNomenclatureByNumCommande($num)
+	{
+		$queryBuilder = $this->_em->createQueryBuilder()
+													->select('n.nom,n.id')
+													->from($this->_entityName, 'a')
+													->join('a.commande','c')
+													->join('a.nomenclature','n')
+													->where('a.nomenclature = n.id AND c.numCommande=:num')
+													->setParameter('num',$num);
+													
+		$query = $queryBuilder->getQuery();
+		$results  = $query->getResult();
+		
+		return $results;
+	}
 }

@@ -36,14 +36,10 @@
 			{{render(controller ("ROGERPlastProdBundle:PlastProd:connexion")) }}
 		</header>
 	<div class = "left-container">
-		<a class = "liens" href = "{{ path('roger_plast_prod_clients') }} "><div class = "btn-clients">
-		</div></a>
-		<a class = "liens" href = "{{ path('roger_plast_prod_production') }} "><div class = "btn-production">
-		</div></a>
-		<a class = "liens" href = "{{ path('roger_plast_prod_fournisseurs') }} "><div class = "btn-fournisseurs">
-		</div></a>
-		<a class = "liens" href = "{{ path('roger_plast_prod_stocks') }} "><div class = "btn-stocks">
-		</div></a>
+		<a class = "liens" href = "{{ path('roger_plast_prod_clients') }} "><div class = "btn-client"><p> Client</p></div></a>
+		<a class = "liens" href = "{{ path('roger_plast_prod_production') }} "><div class = "btn-production"> <p>Production </p></div></a>
+		<a class = "liens" href = "{{ path('roger_plast_prod_fournisseurs') }} "><div class = "btn-fournisseur"> <p>Fournisseurs </p></div></a>
+		<a class = "liens" href = "{{ path('roger_plast_prod_stocks') }} "><div class = "btn-stock"> <p> Stocks </p></div></a>
 		<a class = "liens" href ="{{ path('roger_plast_prod_config')}}" ><div class="btn-config"><img src="{{ asset('bundles/PlastProd/images/config.jpg')}}"/></div></a>
 	</div>
 	{% block body %}

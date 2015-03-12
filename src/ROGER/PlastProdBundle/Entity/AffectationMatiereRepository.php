@@ -12,14 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class AffectationMatiereRepository extends EntityRepository
 {
-	public function getListeMatiereDansNomenclature()
+	public function getListeMatiereDansNomenclature($nomenclature)
 	{
 			$queryBuilder = $this->_em->createQueryBuilder()
 													->select('n.nom, m.nom, a.quantite')
 													->from($this->_entityName, 'a')
 													->join('a.nomenclature','n')
 													->join('a.matiere','m')
-													->where('n.id = a.nomenclature AND m.id = a.matiere');
+													->where('n.id = a.nomenclature AND m.id = a.matiere AND n.id =:num')
+													->setParameter('num',$nomenclature);
 			$query = $queryBuilder->getQuery();
 			$results  = $query->getResult();
 		

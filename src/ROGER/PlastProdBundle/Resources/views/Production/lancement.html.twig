@@ -6,7 +6,21 @@
 {% endblock %}
 
 {% block actions %}
-<div class ="lancement">
-<p> On affichera ici la page de  lancement de production</p>
-</div>
+
+<table>
+	<thead>
+		<th>Id de la commande</th>
+		<th>Date de la commande</th>
+		<th>Lancer la production</th>
+	</thead>
+	<tbody>
+		{% for commande in commandes %}
+		<tr>
+			<td>{{ commande.id }}</td>
+			<td>{{ commande.dateCommande | date('d/m/y') }} </td>
+			<td></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
 {% endblock %}

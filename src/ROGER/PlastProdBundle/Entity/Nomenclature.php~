@@ -23,15 +23,6 @@ class Nomenclature
      */
     private $id;
 	
-	/**
-	* @var integer
-	*
-	* @ORM\Column(name="Affectation_matiere",type="integer")
-	* @ORM\Id
-	* @ORM\GeneratedValue(strategy="NONE")
-	*/
-	private $affectation_matiere;
-
     /**
      * @var string
      *
@@ -161,5 +152,41 @@ class Nomenclature
     public function getTempsAssemblage()
     {
         return $this->tempsAssemblage;
+    }
+
+    /**
+     * Set id
+     *
+     * @param integer $id
+     * @return Nomenclature
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Set affectation_matiere
+     *
+     * @param integer $affectationMatiere
+     * @return Nomenclature
+     */
+    public function setAffectationMatiere($affectationMatiere)
+    {
+        $this->affectation_matiere = $affectationMatiere;
+
+        return $this;
+    }
+
+    /**
+     * Get affectation_matiere
+     *
+     * @return integer 
+     */
+    public function getAffectationMatiere()
+    {
+        return $this->affectation_matiere;
     }
 }

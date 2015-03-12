@@ -66,6 +66,21 @@ class Commande
 	* @ORM\Column(name="estComplet", type ="boolean")
 	*/
 	private $estComplet;
+	
+	/**
+	* @var integer
+	* 
+	* @ORM\Column(name="estProduite", type ="boolean")
+	*/
+	private $estProduite;
+	
+	/**
+	* @var integer
+	* 
+	* @ORM\Column(name="estExpediee", type ="boolean")
+	*/
+	private $estExpediee;
+	
     /**
      * Get id
      *
@@ -174,5 +189,74 @@ class Commande
     public function getDateSortie()
     {
         return $this->dateSortie;
+    }
+
+    /**
+     * Set dateLancement
+     *
+     * @param \DateTime $dateLancement
+     * @return Commande
+     */
+    public function setDateLancement($dateLancement)
+    {
+        $this->dateLancement = $dateLancement;
+
+        return $this;
+    }
+
+    /**
+     * Get dateLancement
+     *
+     * @return \DateTime 
+     */
+    public function getDateLancement()
+    {
+        return $this->dateLancement;
+    }
+
+    /**
+     * Set estExpediee
+     *
+     * @param boolean $estExpediee
+     * @return Commande
+     */
+    public function setEstExpediee($estExpediee)
+    {
+        $this->estExpediee = $estExpediee;
+
+        return $this;
+    }
+
+    /**
+     * Get estExpediee
+     *
+     * @return boolean 
+     */
+    public function getEstExpediee()
+    {
+        return $this->estExpediee;
+    }
+
+    /**
+     * Set estProduite
+     *
+     * @param boolean $estProduite
+     * @return Commande
+     */
+    public function setEstProduite($estProduite)
+    {
+        $this->estProduite = $estProduite;
+
+        return $this;
+    }
+
+    /**
+     * Get estProduite
+     *
+     * @return boolean 
+     */
+    public function getEstProduite()
+    {
+        return $this->estProduite;
     }
 }

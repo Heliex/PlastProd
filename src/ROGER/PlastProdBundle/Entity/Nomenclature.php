@@ -23,15 +23,6 @@ class Nomenclature
      */
     private $id;
 	
-	/**
-	* @var integer
-	*
-	* @ORM\Column(name="Affectation_matiere",type="integer")
-	* @ORM\Id
-	* @ORM\GeneratedValue(strategy="NONE")
-	*/
-	private $affectation_matiere;
-
     /**
      * @var string
      *
