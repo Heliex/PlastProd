@@ -385,34 +385,25 @@
 	}
 	
 	
-	.lancerProd th, .lancerProd td
+	.lancerProd th, .lancerProd td, .superviser th, .superviser td
 	{
 		text-align : center;
 		width : 250px;
 		padding-left : 5%;
 	}
 	
-	.lancerProd th
-	{
-		margin-bottom : 2%;
-	}
-	
-	.lancerProd tbody
-	{
-		margin-top : 5%;
-	}
-	
-	.lancerProd button
+	.lancerProd button, .valid button
 	{
 		margin-top : 10%;
 		width : 80%;
 		height : 60px;
 	}
 	
-	.lancerProd
+	.lancerProd, .superviser
 	{
 		background-color : rgba(242,137,61,0.7);
 		font-family : Comic Sans MS;
 		width : 100%;
+		margin-top : 3%;
 	}
 }

@@ -15,7 +15,7 @@ class StockPdtFini
 
 	/**
 	*
-	* @ORM\OneToOne(targetEntity="ROGER\PlastProdBundle\Entity\Nomenclature")
+	* @ORM\ManytoOne(targetEntity="ROGER\PlastProdBundle\Entity\Nomenclature",cascade={"persist"})
 	*/
 	
 	private $nomenclature;
@@ -127,5 +127,28 @@ class StockPdtFini
     public function getDeffectueux()
     {
         return $this->deffectueux;
+    }
+
+    /**
+     * Set nomenclature
+     *
+     * @param \ROGER\PlastProdBundle\Entity\Nomenclature $nomenclature
+     * @return StockPdtFini
+     */
+    public function setNomenclature(\ROGER\PlastProdBundle\Entity\Nomenclature $nomenclature = null)
+    {
+        $this->nomenclature = $nomenclature;
+
+        return $this;
+    }
+
+    /**
+     * Get nomenclature
+     *
+     * @return \ROGER\PlastProdBundle\Entity\Nomenclature 
+     */
+    public function getNomenclature()
+    {
+        return $this->nomenclature;
     }
 }

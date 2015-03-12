@@ -6,6 +6,30 @@
 {% endblock %}
 
 {% block actions %}
-	<a class = "liens" href = "{{ path('roger_plast_prod_production_etiquette') }}"><button class="cust_butt_stocks"><p>Editions des étiquettes</p></button></a>
-	<a class = "liens" href = "{{ path('roger_plast_prod_production_jeter')}}"><button class="cust_butt_stocks"><p>Editions des bons à jeter</p></button></a>
+{{ form_start(form) }}
+<table class = "superviser">
+	<thead>
+		<th>Date d'entrée en stocks</th>
+		<th>Numéro d'étiquette</th>
+		<th>Produit déffectueux</th>
+		<th>Editer Bon à Jeter / Etiquette</th>
+	</thead>
+	<tbody>
+	{% for champ in form.pdtFini %}
+		<tr>
+			<td>{{ form_widget(champ.dateEntree)}}</td>
+			<td>{{ form_widget(champ.etiquette)}}</td>
+			<td>{{ form_widget(champ.deffectueux)}}</td>
+			<td>
+			{% if champ.deffectueux.vars.data %}
+				<button class="edit" > Editer le bon à jeter</button>
+			{% else %}
+				<button class="edit" >Editer l'étiquette</button>
+			{% endif %}
+			</td>
+		</tr>
+	{% endfor %}
+	</tbody>
+</table>
+{{ form_end(form) }}
 {% endblock %}

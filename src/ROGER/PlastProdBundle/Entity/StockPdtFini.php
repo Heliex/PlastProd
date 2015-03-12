@@ -15,7 +15,7 @@ class StockPdtFini
 
 	/**
 	*
-	* @ORM\OneToOne(targetEntity="ROGER\PlastProdBundle\Entity\Nomenclature")
+	* @ORM\ManytoOne(targetEntity="ROGER\PlastProdBundle\Entity\Nomenclature",cascade={"persist"})
 	*/
 	
 	private $nomenclature;
@@ -36,9 +36,9 @@ class StockPdtFini
     private $dateEntree;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="Etiquette", type="integer")
+     * @ORM\Column(name="Etiquette", type="string",length=255)
      */
     private $etiquette;
 
