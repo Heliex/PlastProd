@@ -33,7 +33,7 @@
 		text-align : center;
 	}
 	
-	.notifs p
+	.item p
 	{
 		line-height: 148px;
 	}
@@ -379,11 +379,18 @@
 		float : left;
 	}
 	
-	.carousel-inner span
+	.span_notif
 	{
 		color : rgba(242,137,61,0.7);
 	}
 	
+	.carousel-inner span
+	{
+		vertical-align:middle;
+		display: inline-block;
+		line-height:normal;
+		text-align : left;
+	}
 	
 	.lancerProd th, .lancerProd td, .superviser th, .superviser td, .table_nomenclature th, .table_nomenclature td, .table_matieres th, .table_matieres td
 	{
@@ -404,5 +411,13 @@
 		font-family : Comic Sans MS;
 		width : 100%;
 		margin-top : 3%;
+	}
+	
+	.flash_notice
+	{
+		text-align : center;
+		color : White;
+		font-size : 1.2em;
+		font-family: Comic Sans MS;
 	}
 }

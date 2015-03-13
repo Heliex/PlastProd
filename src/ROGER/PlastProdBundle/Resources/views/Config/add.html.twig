@@ -8,4 +8,10 @@
 {% endblock %}
 {% block actions %}
 {{ form(form) }}
+
+{% for flashMessage in app.session.flashbag.get('userAdded') %}
+	<div class = "flash_notice">
+		{{ flashMessage }}
+	</div>
+{% endfor %}
 {% endblock %}

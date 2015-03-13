@@ -58,9 +58,9 @@ roger_plast_prod_config:
     path:    /Config
     defaults: {_controller: ROGERPlastProdBundle:Config:index}
 
-roger_plast_prod_config_acces:
-    path:    /Config/Acces
-    defaults: { _controller: ROGERPlastProdBundle:Config:acces}
+roger_plast_prod_config_user:
+    path:    /Config/Utilisateur
+    defaults: { _controller: ROGERPlastProdBundle:Config:utilisateur}
 
 roger_plast_prod_config_droits:
     path:    /Config/Droits

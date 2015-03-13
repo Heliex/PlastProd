@@ -31,11 +31,11 @@ class ConfigController extends Controller
         return $this->render('ROGERPlastProdBundle:Config:index.html.twig', array('module' => $module, 'utilisateurs' => $listeUser));
     }
 	
-	public function accesAction()
+	public function utilisateurAction()
     {
 		$module = "Panneau de configuration";
 		
-        return $this->render('ROGERPlastProdBundle:Config:acces.html.twig', array('module' => $module));
+        return $this->render('ROGERPlastProdBundle:Config:utilisateur.html.twig', array('module' => $module));
     }
 	
 	public function droitsAction()
@@ -63,29 +63,23 @@ class ConfigController extends Controller
         if (null !== $event->getResponse()) {
             return $event->getResponse();
         }
-
+		$em = $this->getDoctrine()->getEntityManager();
         $form = $formFactory->createForm()
+		->add('roles','choice',array('choices' => array('ROLE_USER' => 'ROLE_USER', 'ROLE_ADMIN' => 'ROLE_ADMIN','ROLE_PROD' => 'ROLE_PROD','ROLE_STOCKS' => 'ROLE_STOCKS'), 'required' => true, 'multiple' => true))
 		->add('ajouter','submit');
         $form->setData($user);
-
-        $form->handleRequest($request);
-
-        if ($form->isValid()) {
-            $event = new FormEvent($form, $request);
-            $dispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
-			$request->getSession()->getFlashBag()->add('notice',"Utilisateur bien enregistré");
-
-            if (null === $response = $event->getResponse()) {
-				
-                $url = $this->generateUrl('roger_plast_prod_config_ajout');
-                $response = new RedirectResponse($url);
-            }
-
-            $dispatcher->dispatch(FOSUserEvents::REGISTRATION_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
-
-            return $response;
-        }
-
+		$role = $form->get('roles')->getData();
+		$user->setRoles($role);
+    
+       if($form->handleRequest($request)->isValid()) // Gestion de la soumission du formulaire
+		{
+				$em->persist($user); // Je persiste les données
+			
+				$em->flush(); // Puis j'applique les changement 
+				$request->getSession()->getFlashBag()->add('userAdded','Utilisateur bien enregistré');
+				return $this->redirect($this->generateUrl('roger_plast_prod_config_ajout')); // Et enfin je redirige vers la page de gestion de MP.
+		}
+		
         return $this->render('ROGERPlastProdBundle:Config:add.html.twig', array(
             'form' => $form->createView(),'module' => $module
         ));
