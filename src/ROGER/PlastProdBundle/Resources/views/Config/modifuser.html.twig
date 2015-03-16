@@ -1,0 +1,35 @@
+{# Vue qui correspond au module Panneau de config, partie modification d'un utlisateur #}
+
+{% extends 'ROGERPlastProdBundle:PlastProd:index.html.twig' %}
+
+{% block title %}
+<title>Panneau de configuration - Modifer un utilisateur - PlastProd </title>
+{% endblock %}
+
+{% block actions %}
+{{ form_start(form) }}
+<table class = "table_user">
+	<thead>
+		<th> Nom d'utilisateur </th>
+		<th> Mot de passe </th>
+	</thead>
+	<tbody>
+		{% for champ in form.utilisateurs %}
+			<tr>
+				<td>{{ form_widget(champ.username) }}</td>
+				<td>{{ form_widget(champ.password) }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+	<tr>
+		<td> {{ form_widget(form.modifier) }}</td>
+	</tr>
+</table>
+{{ form_end(form) }}
+
+{% for flashMessage in app.session.flashbag.get('userModified') %}
+	<div class = "flash_notice">
+		{{ flashMessage }}
+	</div>
+{% endfor %}
+{% endblock %}

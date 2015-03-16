@@ -19,6 +19,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
+use ROGER\UserBundle\Entity\ListeUtilisateurs;
+use ROGER\UserBundle\Form\ListeUtilisateursType;
 
 
 class ConfigController extends Controller
@@ -26,9 +28,7 @@ class ConfigController extends Controller
     public function indexAction()
     {
 		$module = "Panneau de configuration";
-		$repository = $this->getDoctrine()->getManager()->getRepository("ROGERUserBundle:Utilisateurs");
-		$listeUser = $repository->getAllUsers();
-        return $this->render('ROGERPlastProdBundle:Config:index.html.twig', array('module' => $module, 'utilisateurs' => $listeUser));
+        return $this->render('ROGERPlastProdBundle:Config:index.html.twig', array('module' => $module));
     }
 	
 	public function utilisateurAction()
@@ -83,6 +83,43 @@ class ConfigController extends Controller
         return $this->render('ROGERPlastProdBundle:Config:add.html.twig', array(
             'form' => $form->createView(),'module' => $module
         ));
+	}
+	
+	public function modifierUserAction(Request $request)
+	{
+		$module = "Panneau de configuration";
+		
+		$em = $this->getDoctrine()->getManager();
+		$repository = $this->getDoctrine()->getManager()->getRepository('ROGERUserBundle:Utilisateurs');
+		$listeUsers = $repository->findAll();
+		$collections = new listeUtilisateurs();
+		foreach($listeUsers as $users)
+		{
+			$collections->getUtilisateurs()->add($users);
+		}
+		
+		$form = $this->createForm(new ListeUtilisateursType(),$collections)->add('modifier','submit');
+		
+		// SI formulaire valide
+		if($form->handleRequest($request)->isValid())
+		{
+			foreach($collections->getUtilisateurs()->toArray() as $collect)
+			{
+				// Gestion de l'encodage des mdp
+				$hash = $this->get('security.password_encoder')->encodePassword($collect,$collect->getPassword());
+				$collect->setPassword($hash);
+				
+				// On persiste les données une fois que le mdp a été encodé
+				$em->persist($collect);
+			}
+			 // Et on flush
+			  $em->flush();
+			$request->getSession()->getFlashBag()->add('userModified','Les modifications des mots de passe ont été bien pris en compte');
+			
+			return $this->redirect($this->generateUrl('roger_plast_prod_config_modifieruser'));
+		}
+		
+		return $this->render('ROGERPlastProdBundle:Config:modifuser.html.twig',array('module' => $module,'form' => $form->createView()));
 	}
 	
 }

@@ -72,7 +72,7 @@
 	
 	.left-container
 	{
-		background-color : #F2893C;
+		background-color : rgba(242,137,61,0.8);
 		text-align : center;
 		width : 175px;
 		height: 900px;
@@ -392,20 +392,20 @@
 		text-align : left;
 	}
 	
-	.lancerProd th, .lancerProd td, .superviser th, .superviser td, .table_nomenclature th, .table_nomenclature td, .table_matieres th, .table_matieres td
+	.lancerProd th, .lancerProd td, .superviser th, .superviser td, .table_nomenclature th, .table_nomenclature td, .table_matieres th, .table_matieres td, .table_user td, .table_user th
 	{
 		text-align : center;
 		width : 250px;	
 	}
 	
-	.lancerProd button, .valid button, .table_nomenclature button, .table_matieres button
+	.lancerProd button, .valid button, .table_nomenclature button, .table_matieres button, .table_user button 
 	{
 		margin-top : 10%;
 		width : 80%;
 		height : 60px;
 	}
 	
-	.lancerProd, .superviser, .table_nomenclature, .table_matieres
+	.lancerProd, .superviser, .table_nomenclature, .table_matieres, .table_user
 	{
 		background-color : rgba(242,137,61,0.7);
 		font-family : Comic Sans MS;
@@ -419,5 +419,10 @@
 		color : White;
 		font-size : 1.2em;
 		font-family: Comic Sans MS;
+	}
+	
+	#fos_user_registration_form
+	{
+		background-color : rgba(242,137,61,0.7);
 	}
 }

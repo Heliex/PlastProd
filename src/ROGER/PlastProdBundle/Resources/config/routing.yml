@@ -62,10 +62,14 @@ roger_plast_prod_config_user:
     path:    /Config/Utilisateur
     defaults: { _controller: ROGERPlastProdBundle:Config:utilisateur}
 
+roger_plast_prod_config_modifieruser:
+    path:    /Config/Utilisateur/Modification
+    defaults: { _controller: ROGERPlastProdBundle:Config:modifierUser}
+
 roger_plast_prod_config_droits:
     path:    /Config/Droits
     defaults: { _controller: ROGERPlastProdBundle:Config:droits}
 
 roger_plast_prod_config_ajout:
-    path:    /Config/Ajout
+    path:    /Config/Utilisateur/Ajout
     defaults: { _controller: ROGERPlastProdBundle:Config:add}

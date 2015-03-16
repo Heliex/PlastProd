@@ -6,23 +6,25 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class UtilisateursType extends AbstractType
+class ListeUtilisateursType extends AbstractType
 {
-
-	public function buildForm(FormBuilderInterface $builder, array $options)
+    /**
+     * @param FormBuilderInterface $builder
+     * @param array $options
+     */
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('username','text',array('read_only' => true,'disabled' => true))
-            ->add('password','password')
-        ;
+            ->add('utilisateurs','collection',array('type' => new UtilisateursType(), 'by_reference' => false));
     }
+    
     /**
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'ROGER\UserBundle\Entity\Utilisateurs'
+            'data_class' => 'ROGER\UserBundle\Entity\ListeUtilisateurs'
         ));
     }
 
@@ -31,6 +33,6 @@ class UtilisateursType extends AbstractType
      */
     public function getName()
     {
-        return 'roger_userbundle_utilisateurs';
+        return 'roger_plastprodbundle_listeutilisateurs';
     }
 }
