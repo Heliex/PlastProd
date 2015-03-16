@@ -1,9 +1,9 @@
 <div class="item active">
 	<span>
 		<p>
-				<td>Dernière commande expediée : </td>
-				<td> Le <span class="span_notif">{{ commandeE[0].dateSortie | date('d/m/y') }} </span></td>
-				<td> au prix total de <span class="span_notif">{{ commandeE[0].total }}€ </span></td>
+				<td><span class="span_notif">Dernière commande expediée : </td>
+				<td> Le <bold>{{ commandeE[0].dateSortie | date('d/m/y') }} </bold></td>
+				<td> au prix total de <bold>{{ commandeE[0].total }} </bold>€ </span></td>
 			</tr>
 		</p>
 	</span>
@@ -11,25 +11,25 @@
 <div class="item">
 	<span>
 		<p>
-				<td>Dernière commande lancée en production : </td>
-				<td>  Le <span class="span_notif">{{ commandeL[0].dateLancement | date('d/m/y') }} </span></td>
+				<td><span class="span_notif">Dernière commande lancée en production : </td>
+				<td>  Le <bold>{{ commandeL[0].dateLancement | date('d/m/y') }} </bold></span></td>
 		</p>
 	</span>
 </div>
 <div class="item">
 	<span>
 		<p>
-				<td>Dernier client à avoir commandé : </td>
-				<td><span class="span_notif">{{ client[0].prenom }}  {{ client[0].nom }}</span></td>
+				<td><span class="span_notif">Dernier client à avoir commandé : </td>
+				<td><bold>{{ client[0].prenom }}  {{ client[0].nom }}</bold></span></td>
 		</p>
 	</span>
 </div>
 <div class="item">
 	<span>
 		<p>
-				<td>Client qui à le plus commandé :</td>
-				<td> <span class="span_notif">{{ bestClient[0].prenom }} </span> </td>
-				<td> <span class="span_notif">{{ bestClient[0].nom}}</span></td>
+				<td><span class="span_notif">Client qui à le plus commandé :</td>
+				<td><bold> {{ bestClient[0].prenom }}</bold></td>
+				<td> <bold>{{ bestClient[0].nom}}</bold></span></td>
 		</p>
 	</span>
 </div>

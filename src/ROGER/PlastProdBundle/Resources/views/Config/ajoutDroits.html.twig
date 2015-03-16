@@ -1,0 +1,30 @@
+{# Vue qui correspond au module Panneau de config, partie Gestion des droits #}
+
+{% extends 'ROGERPlastProdBundle:PlastProd:index.html.twig' %}
+
+{% block title %}
+<title>Panneau de configuration - Gestion des droits - Ajouter un/des droit(s) - PlastProd </title>
+{% endblock %}
+
+
+{% block actions %}
+{{ form_start(form) }}
+<table class = "table_roles">
+	<thead>
+		<th> Nom d'utilisateur </th>
+		<th> Liste de rôles</th>
+	</thead>
+	<tbody>
+		{% for champ in form.utilisateurs %}
+			<tr>
+				<td>{{ form_widget(champ.username) }}</td>
+				<td>{{ form_widget(champ.roles) }}</td>
+			</tr>
+		{% endfor %}
+	</tbody>
+	<tr>
+		<td> {{ form_widget(form.Valider) }}</td>
+	</tr>
+</table>
+{{ form_end(form) }}
+{% endblock %}

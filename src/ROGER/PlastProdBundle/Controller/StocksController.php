@@ -33,7 +33,7 @@ class StocksController extends Controller
 	// Gestion du formulaire pour la partie matieres premiere
 	public function matieresAction(Request $request)
 	{
-		$module = "Stocks";
+		$module = "Stocks - Gestion des matières premières";
 		$em = $this->getDoctrine()->getManager();
 		$repository = $this->getDoctrine()->getManager()->getRepository('ROGERPlastProdBundle:Matiere');
 		$listeMatieres = $repository->findAll(); // Je récupère toutes les matières
@@ -60,7 +60,7 @@ class StocksController extends Controller
 	
 	public function nomenclatureAction(Request $request)
 	{
-		$module = "Stocks";
+		$module = "Stocks - Gestion des nomenclatures";
 		$em = $this->getDoctrine()->getManager();
 		$repository = $this->getDoctrine()->getManager()->getRepository('ROGERPlastProdBundle:Commande');
 		$listeCommande = $repository->findAll();

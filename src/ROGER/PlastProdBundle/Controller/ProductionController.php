@@ -31,7 +31,7 @@ class ProductionController extends Controller
 	// Fonction qui fais le lien entre PlastProd/Production/LancerProd Et la vue associée
 	public function lancementAction(Request $request)
 	{
-		$module = "Production";
+		$module = "Production - Visualiser les bons de commandes";
 		$em = $this->getDoctrine()->getEntityManager();
 		$repository = $this->getDoctrine()->getManager()->getRepository("ROGERPlastProdBundle:Commande");
 		
@@ -59,7 +59,7 @@ class ProductionController extends Controller
 	
 	public function superviserAction()
 	{
-		$module = "Production";
+		$module = "Production - Superviser la production";
 		$em = $this->getDoctrine()->getEntityManager();
 		$repository = $this->getDoctrine()->getManager()->getRepository("ROGERPlastProdBundle:StockPdtFini");
 		$listeStocks = $repository->findAll();

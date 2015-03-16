@@ -18,10 +18,19 @@
 		88100 Saint-Dié-Des-Vosges CEDEX <br />
 		</div></p>
 	
-	<h2> Par mail  ou Réseaux sociaux </h2>
+	<h2> Par mail </h2>
 	<div id = "mail">
-		<p> {{ form(form) }} </p>
-		<p> Facebook - Twitter - Instagram - Snapchat </p>
+		{{ form_start(form) }}
+		<table class='table_mail'>
+			<tbody>
+					<tr><td>{{ form_label(form.titre,'Sujet du mail') }} </td><td>{{ form_widget(form.titre) }}</td></tr>
+					<tr><td>{{ form_label(form.auteur,'Expéditeur') }} </td><td>{{ form_widget(form.auteur) }}</td></tr>
+					<tr><td>{{ form_label(form.contenu,'Contenu') }} </td><td>{{ form_widget(form.contenu) }}</td></tr>
+				</tr>
+				<tr><td>{{ form_widget(form.Envoyer) }}</td></tr>
+			</tbody>
+		</table>
+		{{ form_end(form) }}
 	</div>
 </div>
 {% endblock %}

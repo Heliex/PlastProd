@@ -11,8 +11,8 @@
 <p> Saisissez le numéro de commande que vous voulez suivre : </p>
 <p>{{ form(form) }} </p>
 {% elseif  commande is defined%}
-<p>Suivi de votre commande : </p>
-<table>
+
+<table class='table_suivi'>
 	<thead>
 		<th> Numéro de la commande </th>
 		<th> Prix de la commande </th>
@@ -22,10 +22,10 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>{{ commande[0].numCommande }}</td>
-			<td>{{ commande[0].total }}</td>
+			<td><input type="text" value='{{ commande[0].numCommande }}' disabled = 'disabled'/></td>
+			<td><input type='text' value ='{{ commande[0].total }}' disabled='disabled' /> €</td>
 			<td>{{ commande[0].dateCommande | date('d/m/y') }}</td>
-			<td>{{ commande[0].estComplet }}</td>
+			<td><input type='checkbox' {% if commande[0].estExpediee %} checked {% endif %}/></td>
 			<td>{{ commande[0].dateSortie | date('d/m/y')}}</td>
 		</tr>
 	</tbody>

@@ -24,7 +24,7 @@ class ClientController extends Controller
 	public function suiviAction(Request $request)
 	{
 		// Je crée le formulaire pour que le client renseignes la commande qu'il veux suivre.
-		$module = "Client";
+		$module = "Client - Suivi";
 		$formBuilder = $this->get('form.factory')->createBuilder('form');
 		$formBuilder->add('num','text');
 		$formBuilder->add('consulter','submit');
@@ -46,19 +46,18 @@ class ClientController extends Controller
 	// Vue pour les infos entreprise
 	public function infosAction()
 	{
-		$module = "Client";
+		$module = "Client - Infos";
 		return $this->render("ROGERPlastProdBundle:Client:infos.html.twig",array('module'=>$module));
 	}
 	
 	// Vue pour communiquez avec l'entreprise
 	public function communiqueAction()
 	{
-		$module = "Client";
+		$module = "Client - Communiquer";
 		$formBuilder = $this->get('form.factory')->createBuilder('form');
 		$formBuilder->add('titre','text');
 		$formBuilder->add('auteur','text');
 		$formBuilder->add('contenu','textarea');
-		$formBuilder->add('date','date');
 		$formBuilder->add('Envoyer','submit');
 		$form = $formBuilder->getForm();
 		return $this->render("ROGERPlastProdBundle:Client:communique.html.twig",array('module'=>$module,'form' => $form->createView()));

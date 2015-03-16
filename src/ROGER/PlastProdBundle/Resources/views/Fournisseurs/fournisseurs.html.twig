@@ -9,12 +9,12 @@
 {% block actions %}
 <div class="fournisseurs">
 	<table>
-		<tr>
-			<td>Nom</td>
-			<td>Adresse</td>
-			<td>Numéro de téléphone</td>
-			<td>Représentant de l'entreprise</td>
-		</tr>
+		<thead>
+			<th>Nom</th>
+			<th>Adresse</th>
+			<th>Numéro de téléphone</th>
+			<th>Représentant de l'entreprise</th>
+		</thead>
 		{% for fournisseur in fournisseurs %}
 		<tr>
 			<td>{{ fournisseur.nom }}</td>

@@ -21,6 +21,7 @@ use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use FOS\UserBundle\Model\UserInterface;
 use ROGER\UserBundle\Entity\ListeUtilisateurs;
 use ROGER\UserBundle\Form\ListeUtilisateursType;
+use ROGER\UserBundle\Form\ListeRolesType;
 
 
 class ConfigController extends Controller
@@ -33,20 +34,20 @@ class ConfigController extends Controller
 	
 	public function utilisateurAction()
     {
-		$module = "Panneau de configuration";
+		$module = "Panneau de configuration - Gérer les utilisateurs";
 		
         return $this->render('ROGERPlastProdBundle:Config:utilisateur.html.twig', array('module' => $module));
     }
 	
 	public function droitsAction()
     {
-		$module = "Panneau de configuration";
+		$module = "Panneau de configuration - Gérer les droits des utilisateurs ";
         return $this->render('ROGERPlastProdBundle:Config:droits.html.twig', array('module' => $module));
     }
 	
 	public function addAction(Request $request)
 	{
-		$module = "Panneau de configuration";
+		$module = "Panneau de configuration - Gérer les utilisateurs - Ajouter un utilisateur";
 		/** @var $formFactory \FOS\UserBundle\Form\Factory\FactoryInterface */
         $formFactory = $this->get('fos_user.registration.form.factory');
         /** @var $userManager \FOS\UserBundle\Model\UserManagerInterface */
@@ -65,12 +66,9 @@ class ConfigController extends Controller
         }
 		$em = $this->getDoctrine()->getEntityManager();
         $form = $formFactory->createForm()
-		->add('roles','choice',array('choices' => array('ROLE_USER' => 'ROLE_USER', 'ROLE_ADMIN' => 'ROLE_ADMIN','ROLE_PROD' => 'ROLE_PROD','ROLE_STOCKS' => 'ROLE_STOCKS'), 'required' => true, 'multiple' => true))
 		->add('ajouter','submit');
         $form->setData($user);
-		$role = $form->get('roles')->getData();
-		$user->setRoles($role);
-    
+
        if($form->handleRequest($request)->isValid()) // Gestion de la soumission du formulaire
 		{
 				$em->persist($user); // Je persiste les données
@@ -87,7 +85,7 @@ class ConfigController extends Controller
 	
 	public function modifierUserAction(Request $request)
 	{
-		$module = "Panneau de configuration";
+		$module = "Panneau de configuration - Gérer les utilisateurs - Modifer un/des utilisateur(s)";
 		
 		$em = $this->getDoctrine()->getManager();
 		$repository = $this->getDoctrine()->getManager()->getRepository('ROGERUserBundle:Utilisateurs');
@@ -122,5 +120,63 @@ class ConfigController extends Controller
 		return $this->render('ROGERPlastProdBundle:Config:modifuser.html.twig',array('module' => $module,'form' => $form->createView()));
 	}
 	
+	public function droitsAjoutAction(Request $request)
+	{
+		$module = "Panneau de configuration - Gérer les droits des utilisateurs - Ajouter un/des droit(s)";
+		$em = $this->getDoctrine()->getManager();
+		$repository = $this->getDoctrine()->getManager()->getRepository('ROGERUserBundle:Utilisateurs');
+		$listeUsers = $repository->findAll();
+		$collections = new listeUtilisateurs();
+		foreach($listeUsers as $users)
+		{
+			$collections->getUtilisateurs()->add($users);
+		}
+		
+		$form = $this->createForm(new ListeRolesType(),$collections)->add('Valider','submit');
+		
+		// Gestion de la soumission du formulaire
+		if($form->handleRequest($request)->isValid())
+		{
+			// Pour chaque utilisateurs
+			foreach($collections->getUtilisateurs()->toArray() as $collect)
+			{
+				// Je persiste la modif des roles
+				$em->persist($collect);
+			}
+			
+			// Et j'applique les changement
+			$em->flush();
+		}
+		return $this->render('ROGERPlastProdBundle:Config:ajoutDroits.html.twig', array('module' => $module, 'form' => $form->createView()));
+	}
+	
+	public function droitsSuppressAction(Request $request)
+	{
+		$module = "Panneau de configuration - Gérer les droits des utilisateurs - Supprimer un/des droits";
+		$em = $this->getDoctrine()->getManager();
+		$repository = $this->getDoctrine()->getManager()->getRepository('ROGERUserBundle:Utilisateurs');
+		$listeUsers = $repository->findAll();
+		$collections = new listeUtilisateurs();
+		foreach($listeUsers as $users)
+		{
+			$collections->getUtilisateurs()->add($users);
+		}
+		
+		$form = $this->createForm(new ListeRolesType(),$collections)->add('Valider','submit');
+		
+		// Gestion de la soumission du formulaire
+		if($form->handleRequest($request)->isValid())
+		{
+			// Pour chaque utilisateurs
+			foreach($collections->getUtilisateurs()->toArray() as $collect)
+			{
+				// Je persiste la modif des roles
+				$em->persist($collect);
+			}
+			// Et j'applique les changement
+			$em->flush();
+		}
+		return $this->render('ROGERPlastProdBundle:Config:supprimerDroits.html.twig',array('module' => $module,'form' => $form->createView()));
+	}
 }
 ?>

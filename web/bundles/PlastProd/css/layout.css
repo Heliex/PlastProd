@@ -272,13 +272,14 @@
 		text-align : center;
 		font-family : Comic Sans MS;
 		font-size : 1.2em;
-		font: bold;
-		color : White;
+		padding-bottom : 2%;
+
 	}
 	
 	.fournisseurs table tr td
 	{
 		width : 300px;
+		color : White;
 	}
 	
 	#fos_user_registration_form
@@ -313,35 +314,11 @@
 		margin-top : 3%;
 	}
 	
-	.infos
-	{
-		text-align : center;
-	}
-
-	.infos table
-	{
-		margin-left : 2%;
-		margin-top : 5%;
-		width : 100%;
-		text-align : center;
-	}
-	.infos table td,.infos table th
-	{
-		text-align : center;
-		padding-right: 3%;
-		padding-top : 2%;
-	}
 	#maps
 	{
 		width : 100%;
 		height : 20%;
-	}
-	
-	#tableinfos
-	{
-		font-family : Comic Sans MS;
-		font-size : 1.2em;
-		text-align: center;
+		margin-top : 5%;
 	}
 	.qcd
 	{
@@ -372,14 +349,12 @@
 		margin-right:40%;
 	}
 	
-	#mail form div div label
+	.span_notif
 	{
-		width : 150px;
-		display:block;
-		float : left;
+		line-height: normal;
 	}
 	
-	.span_notif
+	bold
 	{
 		color : rgba(242,137,61,0.7);
 	}
@@ -392,25 +367,137 @@
 		text-align : left;
 	}
 	
-	.lancerProd th, .lancerProd td, .superviser th, .superviser td, .table_nomenclature th, .table_nomenclature td, .table_matieres th, .table_matieres td, .table_user td, .table_user th
+	.lancerProd th, .lancerProd td, .superviser th, .superviser td, .table_nomenclature th, .table_nomenclature td, .table_matieres th, .table_matieres td, .table_user td, .table_user th, .table_roles th, .table_roles td, .table_suivi td, .table_suivi th,.fournisseurs td, .fournisseurs th,#tableinfos th, #tableinfos td
 	{
 		text-align : center;
 		width : 250px;	
+		padding-top : 1%;
 	}
 	
-	.lancerProd button, .valid button, .table_nomenclature button, .table_matieres button, .table_user button 
+	.table_nomenclature th, .table_nomenclature td
+	{
+		width : 180px;
+	}
+	
+	.superviser th,.superviser td
+	{ 
+		padding-bottom : 1.5%;
+	}
+	
+	.table_suivi td
+	{
+		padding-bottom : 2%;
+	}
+	
+	#fos_user_registration_form_ajouter
+	{
+		width : 40%;
+		margin-left : 25%;
+		height : 40px;
+	}
+	.valid button 
 	{
 		margin-top : 10%;
 		width : 80%;
 		height : 60px;
 	}
 	
-	.lancerProd, .superviser, .table_nomenclature, .table_matieres, .table_user
+	.table_user button 
 	{
+		width : 100%;
+		margin-left : 50%;
+		margin-top : 2%;
+		height : 50px;
+		margin-bottom : 3%;
+	}
+	
+	.table_matieres button
+	{
+		width : 100%;
+		margin-left : 50%;
+		margin-top : 4%;
+		margin-bottom : 6%;
+		height : 50px;
+	}
+	
+	.table_roles button
+	{
+		width : 100%;
+		margin-left : 50%;
+		height : 60px;
+		margin-top : 10%;
+		margin-bottom : 6%;
+	}
+	.lancerProd button
+	{
+		width : 100%;
+		margin-left : 100%;
+		height : 50px;
+		margin-top : 8%;
+		margin-bottom : 6%;
+	}
+	
+	.table_nomenclature button
+	{
+		width : 100%;
+		margin-left : 200%;
+		margin-top : 8%;
+		margin-bottom : 6%;
+		height : 50px;
+	}
+	
+	#mail button
+	{
+		margin-bottom : 4%;
+	}
+	
+	.lancerProd, .superviser, .table_nomenclature, .table_matieres, .table_user, .table_roles, #tableinfos,#mail, .table_suivi, .fournisseurs
+	{
+		font-size: 1.2em;
 		background-color : rgba(242,137,61,0.7);
 		font-family : Comic Sans MS;
 		width : 100%;
 		margin-top : 3%;
+		-webkit-border-radius: 15px;
+		-moz-border-radius: 15px;
+		border-radius: 15px;
+		-moz-box-shadow: 0px 0px 3px 3px #E8E6E2;
+		-webkit-box-shadow: 0px 0px 3px 3px #E8E6E2;
+		-o-box-shadow: 0px 0px 3px 3px #E8E6E2;
+		box-shadow: 0px 0px 3px 3px #E8E6E2;
+		filter:progid:DXImageTransform.Microsoft.Shadow(color=#E8E6E2, Direction=NaN, Strength=3);
+	}
+
+	#tableinfos td
+	{
+		padding-left : 3%;
+		padding-right: 3%;
+	}
+	
+	#mail
+	{
+		margin-left : 25%;
+		width : 50%;
+		margin-right: 25%;
+	}
+	
+	.table_mail td
+	{
+		text-align : center;
+		padding-top : 2%;
+	}
+	
+	.table_mail
+	{
+		width : 100%;
+		text-align : center;
+	}
+	
+	.table_mail button
+	{
+		width : 100%;
+		margin-left : 100%;
+		height : 40px;
 	}
 	
 	.flash_notice
@@ -424,5 +511,10 @@
 	#fos_user_registration_form
 	{
 		background-color : rgba(242,137,61,0.7);
+	}
+	
+	textarea
+	{
+		resize :none;
 	}
 }

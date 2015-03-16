@@ -24,26 +24,5 @@ class FournisseursController extends Controller
 		
 		return $this->render("ROGERPlastProdBundle:Fournisseurs:fournisseurs.html.twig",array('module'=>$module,'fournisseurs' => $listeFournisseurs));
 	}
-	
-	// Fonction qui fais le lien entre PlastProd/fournisseurs/LancerProd Et la vue associée
-	public function lancementAction()
-	{
-		$module = "Fournisseurs";
-		return $this->render("ROGERPlastProdBundle:fournisseurs:lancement.html.twig",array('module'=>$module));
-	}
-	
-	// Fonction qui fais le lien entre PlastProd/fourn/Etiquettes Et la vue associée
-	public function etiquetteAction()
-	{
-		$module = "Fournisseurs";
-		return $this->render("ROGERPlastProdBundle:fournisseurs:etiquette.html.twig",array('module'=>$module));
-	}
-	
-	// Fonction qui fais le lien entre PlastProd/fourn/BonAJeter Et la vue associée
-	public function jeterAction()
-	{
-		$module = "Fournisseurs";
-		return $this->render("ROGERPlastProdBundle:Fournisseurs:produitsDefaillants.html.twig",array('module'=>$module));
-	}
 }
 ?>

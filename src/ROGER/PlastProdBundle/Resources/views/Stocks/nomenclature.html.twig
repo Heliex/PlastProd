@@ -12,7 +12,7 @@
 <table class="table_nomenclature">
 	<thead>
 		<th>Numéro de commande</th>
-		<th>Total de la commande</th>
+		<th>Total de la commande (€)</th>
 		<th>Date de la commande</th>
 		<th> Commande complète </th>
 		<th> Commande expédiee </th>
@@ -22,7 +22,7 @@
 		{% for champ in form.commande %}
 			<tr>
 				<td>{{ form_widget(champ.numCommande) }}</td>
-				<td>{{ form_widget(champ.total) }} €</td>
+				<td>{{ form_widget(champ.total) }} </td>
 				<td>{{ form_widget(champ.dateCommande) }}</td>
 				<td>{{ form_widget(champ.estComplet) }}</td>
 				<td>{{ form_widget(champ.estExpediee) }}</td>
