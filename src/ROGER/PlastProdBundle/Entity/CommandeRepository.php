@@ -113,4 +113,21 @@ class CommandeRepository extends EntityRepository
 		
 		return $results;
 	}
+	
+	public function getCommande($numCommande,$name)
+	{
+		
+		$queryBuilder = $this->_em->createQueryBuilder()
+													->select('c')
+													->from($this->_entityName,'c')
+													->join('c.client','d')
+													->where('c.numCommande = :commande AND d.nom = :nom')
+													->setParameter('commande',$numCommande)
+													->setParameter('nom',$name);
+		
+		$query = $queryBuilder->getQuery();
+		$results = $query->getResult();
+		
+		return $results;
+	}
 }

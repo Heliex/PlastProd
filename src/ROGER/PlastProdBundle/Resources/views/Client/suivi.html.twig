@@ -11,11 +11,19 @@
 {{ form_start(form) }}
 <table class ='table_suivi'>
 	<thead>
+		<th> Votre Nom</th>
 		<th> Numéro de commande </th>
+		<th></th>
+		<th></th>
 	</thead>
 	<tbody>
 		<tr>
+			<td>{{ form_errors(form.nom) }}  
+			{{ form_widget(form.nom) }}</td>
 			<td>{{ form_widget(form.num) }} </td>
+			{% if erreur is defined %}
+			<td>{{ erreur }}</td>
+			{% endif %}
 			<td>{{ form_widget(form.consulter) }}</td>
 		</tr>
 	</tbody>
@@ -43,5 +51,4 @@
 	</tbody>
 </table>
 {% endif %}
-
 {% endblock %}

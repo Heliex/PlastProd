@@ -3,6 +3,7 @@
 namespace ROGER\PlastProdBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Commande
@@ -27,56 +28,59 @@ class Commande
 	
 	/**
 	* @var integer
-	*
+	* @Assert\NotBlank(message="Vous devez taper un nombre")
+	* @Assert\Range(min=0,max = 2147483647)
+	* @Assert\Regex(pattern= "/^\d{1,2147483647}$/", message="On attends un entier positif", match = true)
 	* @ORM\Column(name="numCommande", type="integer")
+	* 
 	*/
 	private $numCommande;
 	
 	/**
 	* @var \DateTime
-	*
+	* @Assert\DateTime()
 	* @ORM\Column(name="Date_sortie", type="date")
 	*/
 	private $dateSortie;
 	
 	/**
 	* @var \DateTime
-	*
+	* @Assert\DateTime()
 	* @ORM\Column(name="Date_Lancement",type="date")
 	*/
 	private $dateLancement;
 	
     /**
      * @var \DateTime
-     *
+     * @Assert\DateTime()
      * @ORM\Column(name="Date_commande", type="date")
      */
     private $dateCommande;
 
     /**
      * @var float
-     *
+     * @Assert\Range(min = 0, max = 999999999999.99)
      * @ORM\Column(name="Total", type="float")
      */
     private $total;
 
 	/**
 	* @var integer
-	* 
+	* @Assert\Range(min=0, max =1)
 	* @ORM\Column(name="estComplet", type ="boolean")
 	*/
 	private $estComplet;
 	
 	/**
 	* @var integer
-	* 
+	* @Assert\Range(min=0, max=1)
 	* @ORM\Column(name="estProduite", type ="boolean")
 	*/
 	private $estProduite;
 	
 	/**
 	* @var integer
-	* 
+	* @Assert\Range(min=0, max = 1)
 	* @ORM\Column(name="estExpediee", type ="boolean")
 	*/
 	private $estExpediee;
