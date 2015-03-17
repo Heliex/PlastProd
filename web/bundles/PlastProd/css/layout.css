@@ -1,6 +1,6 @@
-/* Feuille de style de la vue principale ( vue qui sera sur toutes les pages du site)*/
+/* Feuille de style qui contient tout le style */
 
-@media screen and (max-width : 1980px) and (min-width : 1000px) and (min-height : 200px) and (max-height : 1080px)
+@media screen and (max-width : 1980px) and (min-width : 1300px) and (min-height : 200px) and (max-height : 1080px)
 {
 	html, body
 	{

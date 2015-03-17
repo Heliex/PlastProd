@@ -15,9 +15,9 @@ class StockPdtFiniType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('dateEntree','date',array('read_only' => true , 'required' => false))
-            ->add('etiquette','text',array('read_only' => true,'required' => false))
-            ->add('deffectueux','checkbox',array('read_only' => true,'required' => false))
+            ->add('dateEntree','date',array('read_only' => true , 'required' => false,'disabled' => 'disabled'))
+            ->add('etiquette','text',array('read_only' => true,'required' => false,'disabled' => 'disabled'))
+            ->add('deffectueux','checkbox',array('read_only' => true,'required' => false,'disabled' => 'disabled'))
         ;
     }
     

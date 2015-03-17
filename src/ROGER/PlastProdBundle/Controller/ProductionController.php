@@ -52,6 +52,7 @@ class ProductionController extends Controller
 					$em->persist($collect); // Je persiste les données
 				}
 				$em->flush(); // Puis j'applique les changement 
+				$request->getSession()->getFlashBag()->add('commandePrepared','Toutes les commandes que avec coché sont maintenant notifié en production');
 				return $this->redirect($this->generateUrl('roger_plast_prod_production_lancement')); // Et enfin je redirige vers la page de lancement de production.
 			}
 		return $this->render("ROGERPlastProdBundle:Production:lancement.html.twig",array('module'=>$module,"form"=>$form->createView()));
