@@ -8,8 +8,20 @@
 
 {% block actions %}
 {% if form is defined %}
-<p> Saisissez le numéro de commande que vous voulez suivre : </p>
-<p>{{ form(form) }} </p>
+{{ form_start(form) }}
+<table class ='table_suivi'>
+	<thead>
+		<th> Numéro de commande </th>
+	</thead>
+	<tbody>
+		<tr>
+			<td>{{ form_widget(form.num) }} </td>
+			<td>{{ form_widget(form.consulter) }}</td>
+		</tr>
+	</tbody>
+</table>
+{{ form_end(form) }}
+</div>
 {% elseif  commande is defined%}
 
 <table class='table_suivi'>

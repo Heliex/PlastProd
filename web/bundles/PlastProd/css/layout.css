@@ -359,6 +359,10 @@
 		color : rgba(242,137,61,0.7);
 	}
 	
+	.suivi_commande
+	{
+		text-align : center;
+	}
 	.carousel-inner span
 	{
 		vertical-align:middle;
