@@ -4,7 +4,7 @@ security:
         ROGER\UserBundle\Entity\Utilisateurs: sha512
 
     role_hierarchy:
-        ROLE_ADMIN:       [ROLE_USER,ROLE_PROD,ROLE_FOURNISSEURS,ROLE_STOCKS]
+        ROLE_ADMIN:       [ROLE_USER,ROLE_PROD,ROLE_STOCKS]
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
 
@@ -27,7 +27,7 @@ security:
             pattern: ^/
             anonymous: ~
             provider: main
-            access_denied_url:    /PlastProd/Client/Suivi
+            access_denied_url:    /PlastProd/
             form_login:
                 login_path: fos_user_security_login
                 check_path: fos_user_security_check
@@ -42,8 +42,8 @@ security:
     
     access_control:
         - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/PlastProd/Client/Suivi, roles: IS_AUTHENTICATED_REMEMBERED}
-        - { path: ^/PlastProd/Production*, roles : IS_AUTHENTICATED_REMEMBERED}
-        - { path: ^/PlastProd/Fournisseurs/*, roles : IS_AUTHENTICATED_REMEMBERED}
-        - { path: ^/PlastProd/Stocks*, roles: IS_AUTHENTICATED_REMEMBERED}
-        - { path: ^/PlastProd/Config*,roles: IS_AUTHENTICATED_REMEMBERED}
+        - { path: ^/PlastProd/Client/Suivi, roles:  ROLE_USER }
+        - { path: ^/PlastProd/Production*, roles : ROLE_PROD}
+        - { path: ^/PlastProd/Fournisseurs/*, roles : [ ROLE_PROD, ROLE_STOCKS] }
+        - { path: ^/PlastProd/Stocks*, roles: ROLE_STOCKS}
+        - { path: ^/PlastProd/Config*,roles: ROLE_ADMIN}
