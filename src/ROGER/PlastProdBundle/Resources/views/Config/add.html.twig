@@ -7,6 +7,7 @@
 <title>Panneau de configuration - Ajout d'un utilisateur - PlastProd </title>
 {% endblock %}
 {% block actions %}
+{{ form_errors(form)}}
 {{ form(form) }}
 
 {% for flashMessage in app.session.flashbag.get('userAdded') %}

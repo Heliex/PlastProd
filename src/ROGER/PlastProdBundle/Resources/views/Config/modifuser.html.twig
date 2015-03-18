@@ -32,4 +32,10 @@
 		{{ flashMessage }}
 	</div>
 {% endfor %}
+
+{% if erreur is defined %}
+<div class="erreur">
+	{{ erreur }}
+</div>
+{% endif %}
 {% endblock %}

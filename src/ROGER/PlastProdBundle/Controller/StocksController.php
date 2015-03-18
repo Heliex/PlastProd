@@ -48,11 +48,30 @@ class StocksController extends Controller
 
 		if($form->handleRequest($request)->isValid()) // Gestion de la soumission du formulaire
 			{
+				// Gestion des nombres et négatifs et caractère
+				// Je récupère les données du formulaire courant.
+				$formulaire = $form->getData();
+				// Puis je récupère la liste des matières.
+				$formulaire = $formulaire->getMatiere();
+				
+				// Pour chaque matière
+				foreach($formulaire as $matiere)
+				{
+					// JE récupère la quantité.
+					$qte = $matiere->getQuantiteStock();
+					if(!preg_match("/^\d{1,11}$/",$qte)) // Si la quantité n'est pas un entier positif compris en 0 et 99999999999.
+					{
+						$erreur = "Vous avez saisi une/des quantité(s) négative ou une chaine de caractères ou un entier de plus de 11 bits de taille, veuillez saisir un/des entier(s) compris entre 0 et 99999999999";
+						return $this->render('ROGERPlastProdBundle:Stocks:matieres.html.twig',array('module' => $module,'erreur' => $erreur,'form' => $form->createView()));
+					}
+				}
+				
 				foreach($collections->getMatiere()->toArray() as $collect) // Pour chaque matiere
 				{
 					$em->persist($collect); // Je persiste les données
 				}
 				$em->flush(); // Puis j'applique les changement 
+				$request->getSession()->getFlashBag()->add('modification',"Les modifications du stocks ont bien été prise en compte.");
 				return $this->redirect($this->generateUrl('roger_plast_prod_stocks_MP')); // Et enfin je redirige vers la page de gestion de MP.
 			}
 		return $this->render("ROGERPlastProdBundle:Stocks:matieres.html.twig",array('module'=>$module,'matieres' => $listeMatieres,'form' => $form->createView()));
@@ -80,6 +99,7 @@ class StocksController extends Controller
 					$em->persist($collect); // Je persiste les données
 				}
 				$em->flush(); // Puis j'applique les changement 
+				$request->getSession()->getFlashBag()->add('modification',"Les modifications des nomenclatures ont bien été prise en compte.");
 				return $this->redirect($this->generateUrl('roger_plast_prod_stocks_nomenclature')); // Et enfin je redirige vers la page de gestion de Nomenclature.
 			}
 		

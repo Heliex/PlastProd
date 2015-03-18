@@ -3,6 +3,7 @@
 namespace ROGER\PlastProdBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Matiere
@@ -30,14 +31,15 @@ class Matiere
 
     /**
      * @var string
-     *
+     * 
      * @ORM\Column(name="Nom", type="string", length=255)
      */
     private $nom;
 
     /**
      * @var integer
-     *
+     * @Assert\Range(min=0,max=99999999999)
+	* @Assert\Regex(pattern= "/^\d{1,2147483647}$/", message="On attends un entier positif", match = true)
      * @ORM\Column(name="Quantite_stock", type="integer")
      */
     private $quantiteStock;

@@ -13,7 +13,7 @@ class UtilisateursType extends AbstractType
     {
         $builder
             ->add('username','text',array('read_only' => true,'disabled' => true))
-            ->add('password','password')
+            ->add('password','password',array('always_empty' => false))
         ;
     }
     /**

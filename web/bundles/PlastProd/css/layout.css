@@ -512,7 +512,7 @@
 		height : 40px;
 	}
 	
-	.flash_notice
+	.flash_notice,.erreur
 	{
 		text-align : center;
 		color : White;

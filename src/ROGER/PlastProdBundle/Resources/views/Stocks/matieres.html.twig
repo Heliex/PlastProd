@@ -24,6 +24,18 @@
 	<tr>
 		<td> {{ form_widget(form.modifier) }}</td>
 	</tr>
+	
 </table>
+{% for flashMessage in app.session.flashbag.get('modification') %}
+	<div class = "flash_notice">
+		{{ flashMessage }}
+	</div>
+{% endfor %}
+{% if erreur is defined %}
+	<div class="erreur">
+		{{ erreur }}
+	</div>
+	{% endif %}
 {{ form_end(form) }}
+
 {% endblock %}

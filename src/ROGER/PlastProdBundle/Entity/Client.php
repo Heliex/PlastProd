@@ -3,6 +3,7 @@
 namespace ROGER\PlastProdBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Client
@@ -23,7 +24,6 @@ class Client
 
     /**
      * @var string
-     *
      * @ORM\Column(name="Nom", type="string", length=255)
      */
     private $nom;
@@ -62,8 +62,7 @@ class Client
      * @ORM\Column(name="Acces", type="boolean")
      */
     private $acces;
-
-
+	
     /**
      * Get id
      *

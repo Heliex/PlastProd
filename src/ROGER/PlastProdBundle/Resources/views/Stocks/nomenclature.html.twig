@@ -34,6 +34,11 @@
 		</tr>
 	</tbody>
 </table>
+	{% for flashMessage in app.session.flashbag.get('modification') %}
+	<div class = "flash_notice">
+		{{ flashMessage }}
+	</div>
+	{% endfor %}
 {{ form_end(form) }}
 
 {% endblock %}

@@ -101,6 +101,20 @@ class ConfigController extends Controller
 		// SI formulaire valide
 		if($form->handleRequest($request)->isValid())
 		{
+			$formulaire = $form->getData();
+			$listeUtilisateurs = $formulaire->getUtilisateurs();
+			
+			foreach($listeUtilisateurs as $utilisateur)
+			{
+				$password = $utilisateur->getPassword();
+				// Si le password ne contient que des espaces 
+				if(ctype_space($password))
+				{
+					$erreur="Un/des mot(s) de passe est/sont composé uniquement de caractère blancs";
+					return $this->render('ROGERPlastProdBundle:Config:modifuser.html.twig',array('module' => $module, 'form' => $form->createView(),'erreur' => $erreur));
+				}
+				
+			}
 			foreach($collections->getUtilisateurs()->toArray() as $collect)
 			{
 				// Gestion de l'encodage des mdp
