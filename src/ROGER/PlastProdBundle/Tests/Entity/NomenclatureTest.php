@@ -6,14 +6,14 @@
 	
 	class NomenclatureTest extends \PHPUnit_Framework_TestCase
 	{
-		/* test sur la méthode getId */
+		/* Test sur la méthode getId */
 		public function testGetId()
 		{
 			$nomenclature = new Nomenclature();
 			$this->assertEquals(null,$nomenclature->getId());
 		}
 		
-		/* test sur la méthode setNom */
+		/* Test sur la méthode setNom */
 		public function testSetNom()
 		{
 			$nomenclature = new Nomenclature();
@@ -21,7 +21,7 @@
 			$this->assertEquals("Aile Carrosserie Plastique",$nomenclature->getNom());
 		}
 		
-		/* test sur la méthode setCheminDoc */
+		/* Test sur la méthode setCheminDoc */
 		public function testSetCheminDoc()
 		{
 			$nomenclature = new Nomenclature();
@@ -29,7 +29,7 @@
 			$this->assertEquals("C:/Users/Test/Image.gif",$nomenclature->getCheminDoc());
 		}
 		
-		/* test sur la méthode setTempsProduction */
+		/* Test sur la méthode setTempsProduction */
 		public function testSetTempsProduction()
 		{
 			$nomenclature = new Nomenclature();
@@ -37,12 +37,28 @@
 			$this->assertEquals(time(),$nomenclature->getTempsProduction());
 		}
 		
-		/* test sur la méthode setTempsAssemblage */
+		/* Test sur la méthode setTempsAssemblage */
 		public function testSetTempsAssemblage()
 		{
 			$nomenclature = new Nomenclature();
 			$nomenclature->setTempsAssemblage(time());
 			$this->assertEquals(time(),$nomenclature->getTempsAssemblage());
+		}
+		
+		/* Test sur la méthode setId */
+		public function testSetId()
+		{
+			$nomenclature = new Nomenclature();
+			$nomenclature->setId(15);
+			$this->assertEquals(15,$nomenclature->getId());
+		}
+		
+		/* Test sur la methode setAffectationMatiere */
+		public function testSetAffectationMatiere()
+		{
+			$nomenclature = new Nomenclature();
+			$nomenclature->setAffectationMatiere(10);
+			$this->assertEquals(10,$nomenclature->getAffectationMatiere());
 		}
 	}
 ?>
