@@ -44,7 +44,7 @@ class Client
 
     /**
      * @var integer
-     *
+     * @Assert\Length(min=10,max=10)
      * @ORM\Column(name="Numero", type="string",length=255)
      */
     private $numero;

@@ -21,7 +21,6 @@ class FournisseursController extends Controller
 		// On récupère la liste des fournisseurs
 		$listeFournisseurs = $repository->getAllFournisseurs();
 		
-		
 		return $this->render("ROGERPlastProdBundle:Fournisseurs:fournisseurs.html.twig",array('module'=>$module,'fournisseurs' => $listeFournisseurs));
 	}
 }
