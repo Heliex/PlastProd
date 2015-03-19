@@ -5,6 +5,7 @@
 	use ROGER\PlastProdBundle\Entity\ListeCommande;
 	use Doctrine\Common\Collections\ArrayCollection;
 	
+	/* Classe de teste sur la classe ListeCommande */
 	class ListeCommandeTest extends \PHPUnit_Framework_TestCase
 	{	
 		/* test de la méthode setCommande */

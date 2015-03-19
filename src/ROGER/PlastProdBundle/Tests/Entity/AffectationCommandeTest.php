@@ -6,6 +6,7 @@
 	use ROGER\PlastProdBundle\Entity\Commande;
 	use ROGER\PlastProdBundle\Entity\Nomenclature;
 	
+	/* classe de test sur la classe AffectactionCommande */
 	class AffectationCommandeTest extends \PHPUnit_Framework_TestCase
 	{
 		/* test sur la méthode setCommande */

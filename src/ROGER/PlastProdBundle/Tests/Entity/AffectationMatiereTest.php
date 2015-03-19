@@ -6,6 +6,7 @@
 	use ROGER\PlastProdBundle\Entity\Matiere;
 	use ROGER\PlastProdBundle\Entity\Nomenclature;
 	
+	/* Classe de test sur AffectationMatiere */
 	class AffectationMatiereTest extends \PHPUnit_Framework_TestCase
 	{	
 		/* test sur la méthode setNomenclature */
