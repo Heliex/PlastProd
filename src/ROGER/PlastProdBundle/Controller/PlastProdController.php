@@ -20,17 +20,13 @@ class PlastProdController extends Controller
         return $this->render('ROGERPlastProdBundle:PlastProd:index.html.twig',array('module' => $module));
     }
 	
-	// Action qui renvoie le vue du formulaire quand quelqu'un veux se connecter
+	// Action qui renvoie la vue du formulaire quand quelqu'un veux se connecter
 	public function connexionAction(Request $request)
 	{	
 		$user =$this->getUser();
 		if(!null == $user)
 		{
 			$user = $user->getUsername();
-		}
-		else
-		{
-			
 		}
 		return $this->render('ROGERPlastProdBundle:PlastProd:userInfo.html.twig',array("user" => $user));
 	}

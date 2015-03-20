@@ -32,7 +32,7 @@ class ProductionController extends Controller
 	public function lancementAction(Request $request)
 	{
 		$module = "Production - Visualiser les bons de commandes";
-		$em = $this->getDoctrine()->getEntityManager();
+		$em = $this->getDoctrine()->getManager();
 		$repository = $this->getDoctrine()->getManager()->getRepository("ROGERPlastProdBundle:Commande");
 		
 		$listeCommande = $repository->getTenLastCommande();
@@ -42,7 +42,7 @@ class ProductionController extends Controller
 			$collectionsCommande->getCommande()->add($commande); // J'ajoute chaque commande dans ma collection
 		}
 		
-		$form = $this->createForm(new ListeCommandeType(),$collectionsCommande)->add('Valider','submit'); // Je crée un formulaire qui contient toutes les matieres modifiables
+		$form = $this->createForm(new ListeCommandeType(),$collectionsCommande)->add('Valider','submit'); // Je crée un formulaire qui contient toutes les commande  modifiables
 		
 
 		if($form->handleRequest($request)->isValid()) // Gestion de la soumission du formulaire
@@ -61,7 +61,7 @@ class ProductionController extends Controller
 	public function superviserAction()
 	{
 		$module = "Production - Superviser la production";
-		$em = $this->getDoctrine()->getEntityManager();
+		$em = $this->getDoctrine()->getManager();
 		$repository = $this->getDoctrine()->getManager()->getRepository("ROGERPlastProdBundle:StockPdtFini");
 		$listeStocks = $repository->findAll();
 		

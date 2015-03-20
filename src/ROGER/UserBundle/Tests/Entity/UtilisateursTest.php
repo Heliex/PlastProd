@@ -10,8 +10,8 @@
 		public function testSetUsername()
 		{
 			$user = new Utilisateurs();
-			$user->setUsername("Yolo");
-			$this->assertEquals("Yolo",$user->getUsername());
+			$user->setUsername('Fougeres');
+			$this->assertEquals('Fougeres',$user->getUsername());
 		}
 	}
 ?>

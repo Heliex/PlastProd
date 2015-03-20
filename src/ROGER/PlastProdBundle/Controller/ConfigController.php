@@ -64,7 +64,7 @@ class ConfigController extends Controller
         if (null !== $event->getResponse()) {
             return $event->getResponse();
         }
-		$em = $this->getDoctrine()->getEntityManager();
+		$em = $this->getDoctrine()->getManager();
         $form = $formFactory->createForm()
 		->add('ajouter','submit');
         $form->setData($user);
@@ -160,6 +160,9 @@ class ConfigController extends Controller
 			
 			// Et j'applique les changement
 			$em->flush();
+			$request->getSession()->getFlashBag()->add('droitsModified','Les droits ont bien été ajouté/modifier');
+			return $this->redirect($this->generateUrl('roger_plast_prod_config_droits_ajout'));
+			
 		}
 		return $this->render('ROGERPlastProdBundle:Config:ajoutDroits.html.twig', array('module' => $module, 'form' => $form->createView()));
 	}
